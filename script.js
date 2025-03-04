@@ -18,4 +18,6 @@ function countdown() {
 }
 
 
-document.body.onload = countdown();
+if (document.getElementById("countdown")) {
+    document.body.onload = countdown();
+}

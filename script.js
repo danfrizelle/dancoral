@@ -21,3 +21,28 @@ function countdown() {
 if (document.getElementById("countdown")) {
     document.body.onload = countdown();
 }
+
+
+const allowedNames = [
+    { first: "Dan", last: "Frizelle" },
+    { first: "Coral", last: "Parker" }
+];
+
+function showRSVPForm() {
+    const firstName = document.getElementById("first-name").value.trim();
+    const lastName = document.getElementById("last-name").value.trim();
+    const name = document.getElementById("name");
+    
+    const isValidName = allowedNames.some(person => 
+        person.first.toLowerCase() === firstName.toLowerCase() && 
+        person.last.toLowerCase() === lastName.toLowerCase()
+    );
+
+    if (isValidName) {
+        document.getElementById("name-entry").classList.add("d-none");
+        document.getElementById("rsvp-form").classList.remove("d-none");
+        name.value = `${firstName} ${lastName}`;
+    } else {
+        alert("Your name is not on the guest list.");
+    }
+}

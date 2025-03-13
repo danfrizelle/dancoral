@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <div class="container mt-5">
+    <div class="container container-rsvp-login mt-5">
         <div id="name-entry" class="text-center">
             <h2 class="mb-4">Enter Your Name</h2>
             <div class="mb-3">
@@ -54,15 +54,15 @@
                         </div>
                         <div class="mb-3">
                             <label for="meal" class="form-label">Meal Preference</label>
-                            <select id="meal" class="form-select" name="meal">
+                            <select id="meal" class="form-select" name="meal" required>
                                 <option value="chicken">Chicken</option>
                                 <option value="beef">Beef</option>
                                 <option value="vegetarian">Vegetarian</option>
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label for="message" class="form-label">Message (Optional)</label>
-                            <textarea id="message" class="form-control" name="message" rows="3" placeholder="Leave a message for the couple"></textarea>
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" class="form-control" name="message" rows="3" placeholder="Leave us a message if you'd like!"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary w-100">Submit RSVP</button>
                     </form>

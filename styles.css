@@ -25,3 +25,30 @@ body {
 .dvh-100 {
     height: 100dvh;
 }
+
+
+
+label[for][for]:has(+ input[required])::after,
+label[for][for]:has(+ select[required])::after {
+    content: " *";
+    color: red;
+}
+
+.banner {
+    width: 100%;
+    height: 200px;
+    background: url(/images/engagement-ring-bw.jpg) no-repeat center center;
+    background-size: cover;
+    position: relative;
+    background-color: black;
+}
+
+@media screen and (min-width: 576px) {
+    .banner {
+        height: 300px;
+        background-size: contain;
+    }
+    .container-rsvp-login {
+        width: 300px;
+    }
+}

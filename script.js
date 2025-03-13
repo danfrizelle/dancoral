@@ -42,6 +42,7 @@ function showRSVPForm() {
         document.getElementById("name-entry").classList.add("d-none");
         document.getElementById("rsvp-form").classList.remove("d-none");
         name.value = `${firstName} ${lastName}`;
+        name.disabled = true;
     } else {
         alert("Your name is not on the guest list.");
     }

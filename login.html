@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+
+    <h1>Login to Access the Protected Page</h1>
+
+    <!-- Login Button -->
+    <button onclick="netlifyIdentity.open()">Login / Signup</button>
+
+    <!-- Logout Button -->
+    <button id="logout" style="display: none;" onclick="netlifyIdentity.logout()">Logout</button>
+
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+        // Handle login events
+        netlifyIdentity.on("login", (user) => {
+            alert("Welcome, " + user.user_metadata.full_name);
+
+            // Get the stored URL from localStorage
+            const redirectTo = localStorage.getItem("redirectTo");
+
+            // Redirect to the protected page they tried to access before logging in
+            if (redirectTo) {
+                window.location.href = redirectTo;  // Redirect to the saved page URL
+                localStorage.removeItem("redirectTo");  // Clear the saved URL after redirect
+            } else {
+                window.location.href = "index.html";  // Default redirect if no page is stored
+            }
+        });
+
+        // Handle logout
+        netlifyIdentity.on("logout", () => {
+            window.location.href = "login.html"; // Redirect after logout
+        });
+
+        // Show/Hide Logout button
+        netlifyIdentity.on("init", (user) => {
+            if (user) {
+                document.getElementById("logout").style.display = "block";
+            }
+        });
+    </script>
+
+</body>
+</html>

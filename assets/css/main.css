@@ -39,6 +39,9 @@ body {
 .df-heading {
     font-size: 4rem;
 }
+.df-heading-1 {
+    font-size: 3.5rem;
+}
 
 .dvh-100 {
     height: 100dvh;

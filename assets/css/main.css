@@ -22,23 +22,31 @@ body {
     font-family: "Libre Baskerville", serif;
     font-weight: 400;
     font-style: normal;
-  }
-  
-  .libre-baskerville-bold {
+}
+
+.libre-baskerville-bold {
     font-family: "Libre Baskerville", serif;
     font-weight: 700;
     font-style: normal;
-  }
-  
-  .libre-baskerville-regular-italic {
+}
+
+.libre-baskerville-regular-italic {
     font-family: "Libre Baskerville", serif;
     font-weight: 400;
     font-style: italic;
+}
+
+.beth-ellen-regular {
+    font-family: "Beth Ellen", cursive;
+    font-weight: 400;
+    font-style: normal;
   }
+  
 
 .df-heading {
     font-size: 4rem;
 }
+
 .df-heading-1 {
     font-size: 3.5rem;
 }
@@ -55,21 +63,91 @@ label[for][for]:has(+ select[required])::after {
     color: red;
 }
 
-.banner {
+.banner-wrapper {
     width: 100%;
-    height: 200px;
-    background: url(/assets/images/engagement-ring-bw.jpg) no-repeat center center;
-    background-size: cover;
-    position: relative;
-    background-color: black;
+    height: 150px;
+    background-image: url('/assets/images/photo-booth-1.jpg');
+    background-size: auto 100%;
+    /* Ensure it tiles horizontally */
+    background-repeat: repeat-x;
+    /* Allow horizontal repetition */
+    animation: move-bg 60s linear infinite;
+}
+
+@keyframes move-bg {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: -1000% 0;
+    }
+}
+
+.banner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.banner-text {
+    color: #ffffff;
+    font-size: 1.5rem;
+}
+
+
+.font-size-small {
+    font-size: 0.75rem;
+}
+
+.font-size-medium {
+    font-size: 1.25rem;
+}
+
+.letter-spacing-4 {
+    letter-spacing: 4px;
+}
+
+.schedule-text {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+}
+
+@media screen and (min-width: 425px) {
+    .banner-text {
+        font-size: 2rem;
+    }
+
+    .schedule-text {
+        font-size: 0.8rem;
+        letter-spacing: 4px;
+    }
 }
 
 @media screen and (min-width: 576px) {
-    .banner {
-        height: 300px;
-        background-size: contain;
-    }
     .container-rsvp-login {
         width: 300px;
+    }
+    
+    @keyframes move-bg {
+        0% {
+            background-position: 0 0;
+        }
+    
+        100% {
+            background-position: 200% 0;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .banner-wrapper {
+        height: 300px;
+    }
+
+    .schedule-text {
+        font-size: 1rem;
+        letter-spacing: 4px;
     }
 }

@@ -55,6 +55,10 @@ body {
     height: 100dvh;
 }
 
+.mb-2rem {
+    margin-bottom: 2rem;
+}
+
 
 
 label[for][for]:has(+ input[required])::after,

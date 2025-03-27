@@ -74,6 +74,23 @@ label[for][for]:has(+ select[required])::after {
     animation: move-bg 60s linear infinite;
 }
 
+.schedule-list-heading {
+    margin-bottom: 2rem;
+}
+
+.schedule-list-container {
+    border-left: 3px solid black;
+    padding: 1rem 0;
+}
+.schedule-list-item {
+    margin-bottom: 2.5rem;
+    margin-left:1rem;
+}
+
+.schedule-image {
+    width: 100px;
+}
+
 @keyframes move-bg {
     0% {
         background-position: 0 0;

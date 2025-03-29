@@ -96,18 +96,79 @@ label[for][for]:has(+ select[required])::after {
 .schedule-image.top-right {
     position: absolute;
     top: 90px;
-    left: 220px;
+    right: 0;
 }
 .schedule-image.middle-right {
     position: absolute;
-    top: 220px;
-    left: 170px;
+    top: 230px;
+    left: 0;
 }
 .schedule-image.bottom-right {
     position: absolute;
-    bottom: 0;
-    left: 170px;
+    bottom: 50px;
+    right: 0;
 }
+
+.schedule-icon {
+    position: relative; /* Ensures absolute positioning is relative to this element */
+    display: inline-block; /* Keeps it inline */
+}
+.schedule-icon::after {
+    content: "";
+    position: absolute;
+}
+
+.drinks-icon::after {
+    width: 80px;
+    height: 80px;
+    background: url(/assets/images/cling-cling.png) no-repeat center center;
+    background-size: contain;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    margin-left: 5px;
+}
+
+.party-icon::after {
+    width: 80px;
+    height: 80px;
+    background: url(/assets/images/disco-ball-new.png) no-repeat center center;
+    background-size: contain;
+    top: 50%;
+    right: 100%;
+    transform: translateY(-50%);
+    margin-right: 5px;
+}
+
+.sparklers-icon::after {
+    width: 55px;
+    height: 55px;
+    background: url(/assets/images/sparkler.png) no-repeat center center;
+    background-size: contain;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    margin-left: 5px;
+}
+
+.banner-text {
+    font-size: 2em;
+    text-align: center;
+    margin-top: 50px;
+    font-family: 'Beth Ellen', cursive;
+    display: inline-block;
+}
+
+.banner-text span {
+    opacity: 0;
+    animation: fadeInLetter 0.5s ease-in forwards;
+}
+
+@keyframes fadeInLetter {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 
 @keyframes move-bg {
     0% {

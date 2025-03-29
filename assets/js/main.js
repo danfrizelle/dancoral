@@ -32,9 +32,9 @@ function showRSVPForm() {
     const firstName = document.getElementById("first-name").value.trim();
     const lastName = document.getElementById("last-name").value.trim();
     const name = document.getElementById("name");
-    
-    const isValidName = allowedNames.some(person => 
-        person.first.toLowerCase() === firstName.toLowerCase() && 
+
+    const isValidName = allowedNames.some(person =>
+        person.first.toLowerCase() === firstName.toLowerCase() &&
         person.last.toLowerCase() === lastName.toLowerCase()
     );
 
@@ -47,3 +47,16 @@ function showRSVPForm() {
         alert("Your name is not on the guest list.");
     }
 }
+
+
+let bannerText = document.getElementById("banner-text");
+let text = bannerText.innerText;
+bannerText.innerHTML = ""; // Clear original text
+
+// Wrap each letter in a span and apply delay
+text.split("").forEach((char, index) => {
+    const span = document.createElement("span");
+    span.innerText = char;
+    span.style.animationDelay = `${index * 0.05}s`; // Delay increases per letter
+    bannerText.appendChild(span);
+});

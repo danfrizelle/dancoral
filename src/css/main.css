@@ -11979,7 +11979,7 @@ textarea.form-control-lg {
 }
 
 .btn {
-  --df-btn-font-size: 1rem;
+  --df-btn-font-size: 0.875rem;
 }
 
 .btn-primary {

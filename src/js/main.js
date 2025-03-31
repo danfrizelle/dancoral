@@ -60,3 +60,45 @@ text.split("").forEach((char, index) => {
     span.style.animationDelay = `${index * 0.05}s`; // Delay increases per letter
     bannerText.appendChild(span);
 });
+
+
+
+
+
+
+
+
+const animationObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        const delay = entry.target.getAttribute('data-delay') || '0';
+        const duration = entry.target.getAttribute('data-duration') || '1';
+
+        let direction;
+        if (window.matchMedia('(min-width: 992px)').matches) {
+            direction = entry.target.getAttribute('data-direction-desktop') || 'bottom';
+        } else if (window.matchMedia('(min-width: 768px)').matches) {
+            direction = entry.target.getAttribute('data-direction-tablet') || entry.target.getAttribute('data-direction-desktop') || 'bottom';
+        } else {
+            direction = entry.target.getAttribute('data-direction-mobile') || entry.target.getAttribute('data-direction-desktop') || 'bottom';
+        }
+
+        entry.target.classList.toggle(`fade-in-${direction}`, entry.isIntersecting);
+        entry.target.style.animationDelay = `${delay}s`;
+        entry.target.style.animationDuration = `${duration}s`;
+
+        if (entry.isIntersecting) {
+            animationObserver.unobserve(entry.target); // Stop observing the element after animation
+        }
+    });
+}, {
+    threshold: 0 // Trigger the animation when the element is 0% visible
+});
+
+
+
+const animationItems = document.querySelectorAll('.animation-item');
+
+animationItems.forEach(item => {
+    console.log(item);
+    animationObserver.observe(item);
+});

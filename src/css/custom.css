@@ -253,6 +253,131 @@ label[for][for]:has(+ select[required])::after {
     letter-spacing: 3px;
 }
 
+
+.colour-pallete-container {
+    display: flex;
+    gap: 9px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.colour-pallette-item {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
+
+.colour-pallette-item:nth-child(1) {
+    border: 1px solid #000000;
+    background: #000000;
+}
+.colour-pallette-item:nth-child(2) {
+    border: 1px solid #264025;
+    background: #264025;
+}
+.colour-pallette-item:nth-child(3) {
+    border: 1px solid #7B4B36;
+    background: #7B4B36;
+}
+.colour-pallette-item:nth-child(4) {
+    border: 1px solid #AD6B4B;
+    background: #AD6B4B;
+}
+.colour-pallette-item:nth-child(5) {
+    border: 1px solid #C0AD8D;
+    background: #C0AD8D;
+}
+.colour-pallette-item:nth-child(6) {
+    border: 1px solid #DDCBB7;
+    background: #DDCBB7;
+}
+
+
+
+/* Animation */
+
+/* .animation-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+} */
+
+.animation-item {
+    opacity: 0;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+.animation-item.fade-in-top {
+    animation-name: fadeInTop;
+}
+
+.animation-item.fade-in-right {
+    animation-name: fadeInRight;
+}
+
+.animation-item.fade-in-bottom {
+    animation-name: fadeInBottom;
+}
+
+.animation-item.fade-in-left {
+    animation-name: fadeInLeft;
+}
+
+.animation-item.no-animation {
+    opacity: 1 !important;
+}
+
+@keyframes fadeInTop {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+
+
 @media screen and (min-width: 425px) {
     .banner-text {
         font-size: 2rem;

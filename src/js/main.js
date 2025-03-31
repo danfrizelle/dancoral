@@ -57,29 +57,24 @@ bannerText.innerHTML = ""; // Clear original text
 text.split("").forEach((char, index) => {
     const span = document.createElement("span");
     span.innerText = char;
-    span.style.animationDelay = `${index * 0.05}s`; // Delay increases per letter
+    span.style.animationDelay = `${index * 0.1}s`; // Delay increases per letter
     bannerText.appendChild(span);
 });
 
 
-
-
-
-
-
-
+/* Animation */
 const animationObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         const delay = entry.target.getAttribute('data-delay') || '0';
-        const duration = entry.target.getAttribute('data-duration') || '1';
+        const duration = entry.target.getAttribute('data-duration') || '1.25';
 
         let direction;
         if (window.matchMedia('(min-width: 992px)').matches) {
-            direction = entry.target.getAttribute('data-direction-desktop') || 'bottom';
+            direction = entry.target.getAttribute('data-direction-desktop') || 'left';
         } else if (window.matchMedia('(min-width: 768px)').matches) {
-            direction = entry.target.getAttribute('data-direction-tablet') || entry.target.getAttribute('data-direction-desktop') || 'bottom';
+            direction = entry.target.getAttribute('data-direction-tablet') || entry.target.getAttribute('data-direction-desktop') || 'left';
         } else {
-            direction = entry.target.getAttribute('data-direction-mobile') || entry.target.getAttribute('data-direction-desktop') || 'bottom';
+            direction = entry.target.getAttribute('data-direction-mobile') || entry.target.getAttribute('data-direction-desktop') || 'left';
         }
 
         entry.target.classList.toggle(`fade-in-${direction}`, entry.isIntersecting);
@@ -93,8 +88,6 @@ const animationObserver = new IntersectionObserver(entries => {
 }, {
     threshold: 0 // Trigger the animation when the element is 0% visible
 });
-
-
 
 const animationItems = document.querySelectorAll('.animation-item');
 

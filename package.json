@@ -1,5 +1,23 @@
 {
+  "name": "dancoral",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "dependencies": {
     "bootstrap": "^5.3.3"
-  }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danfrizelle/dancoral.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danfrizelle/dancoral/issues"
+  },
+  "homepage": "https://github.com/danfrizelle/dancoral#readme"
 }

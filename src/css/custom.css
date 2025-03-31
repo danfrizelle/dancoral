@@ -8,20 +8,24 @@ body {
 
 
 section {
-    scroll-margin-top: 66px; /* Adjust this to match your navbar height */
+    scroll-margin-top: 66px;
+    /* Adjust this to match your navbar height */
 }
 
-.my-5rem{
-    margin: 5rem 0 !important;
+.my-5rem {
+    margin-top: 5rem !important;
+    margin-bottom: 5rem !important;
 }
-.mb-5rem{
+
+.mb-5rem {
     margin-bottom: 5rem !important;
 }
 
 .navbar {
     background-color: #ebe1d8;
-    box-shadow: 0 8px 6px -8px #0000007a;
+    box-shadow: 0 8px 6px -12px #0000007a;
 }
+
 .navbar-nav .nav-link {
     color: #212529;
 }
@@ -60,8 +64,16 @@ section {
     font-family: "Beth Ellen", cursive;
     font-weight: 400;
     font-style: normal;
-  }
-  
+}
+
+
+.montserrat-regular {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
 
 .df-heading {
     font-size: 4rem;
@@ -105,6 +117,7 @@ label[for][for]:has(+ select[required])::after {
 .schedule-list-container {
     position: relative;
 }
+
 .schedule-list-item {
     margin-bottom: 2.5rem;
 }
@@ -118,11 +131,13 @@ label[for][for]:has(+ select[required])::after {
     top: 90px;
     right: 0;
 }
+
 .schedule-image.middle-right {
     position: absolute;
     top: 230px;
     left: 0;
 }
+
 .schedule-image.bottom-right {
     position: absolute;
     bottom: 50px;
@@ -130,9 +145,12 @@ label[for][for]:has(+ select[required])::after {
 }
 
 .schedule-icon {
-    position: relative; /* Ensures absolute positioning is relative to this element */
-    display: inline-block; /* Keeps it inline */
+    position: relative;
+    /* Ensures absolute positioning is relative to this element */
+    display: inline-block;
+    /* Keeps it inline */
 }
+
 .schedule-icon::after {
     content: "";
     position: absolute;
@@ -185,8 +203,13 @@ label[for][for]:has(+ select[required])::after {
 }
 
 @keyframes fadeInLetter {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 
@@ -245,12 +268,12 @@ label[for][for]:has(+ select[required])::after {
     .container-rsvp-login {
         width: 300px;
     }
-    
+
     @keyframes move-bg {
         0% {
             background-position: 0 0;
         }
-    
+
         100% {
             background-position: 200% 0;
         }

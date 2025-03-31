@@ -70,11 +70,11 @@ const animationObserver = new IntersectionObserver(entries => {
 
         let direction;
         if (window.matchMedia('(min-width: 992px)').matches) {
-            direction = entry.target.getAttribute('data-direction-desktop') || 'left';
+            direction = entry.target.getAttribute('data-direction-desktop') || 'bottom';
         } else if (window.matchMedia('(min-width: 768px)').matches) {
-            direction = entry.target.getAttribute('data-direction-tablet') || entry.target.getAttribute('data-direction-desktop') || 'left';
+            direction = entry.target.getAttribute('data-direction-tablet') || entry.target.getAttribute('data-direction-desktop') || 'bottom';
         } else {
-            direction = entry.target.getAttribute('data-direction-mobile') || entry.target.getAttribute('data-direction-desktop') || 'left';
+            direction = entry.target.getAttribute('data-direction-mobile') || entry.target.getAttribute('data-direction-desktop') || 'bottom';
         }
 
         entry.target.classList.toggle(`fade-in-${direction}`, entry.isIntersecting);
@@ -82,7 +82,7 @@ const animationObserver = new IntersectionObserver(entries => {
         entry.target.style.animationDuration = `${duration}s`;
 
         if (entry.isIntersecting) {
-            animationObserver.unobserve(entry.target); // Stop observing the element after animation
+            // animationObserver.unobserve(entry.target);
         }
     });
 }, {

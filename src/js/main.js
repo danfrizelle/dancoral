@@ -82,7 +82,7 @@ const animationObserver = new IntersectionObserver(entries => {
         entry.target.style.animationDuration = `${duration}s`;
 
         if (entry.isIntersecting) {
-            // animationObserver.unobserve(entry.target);
+            animationObserver.unobserve(entry.target);
         }
     });
 }, {

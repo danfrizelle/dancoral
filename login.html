@@ -49,11 +49,14 @@
     <div class="container">
         <div class="login-container mx-auto">
             <h2 class="text-center mb-4 text-uppercase">Login</h2>
-            <div class="mb-3">
+            <!-- <div class="mb-3">
                 <input type="text" id="firstName" class="form-control" placeholder="First Name">
             </div>
             <div class="mb-3">
                 <input type="text" id="lastName" class="form-control" placeholder="Last Name">
+            </div> -->
+            <div class="mb-3">
+                <input type="password" id="password" class="form-control" placeholder="Password">
             </div>
             <button class="btn btn-primary w-100 montserrat-regular text-uppercase" onclick="login()">Login</button>
             <p id="error" class="text-danger text-center mt-3"></p>
@@ -61,36 +64,24 @@
     </div>
 
     <script>
-        const allowedNames = [
-            { first: "Dan", last: "Frizelle" },
-            { first: "Coral", last: "Parker" }
-        ];
+        const allowedPasswords = ["parelle", "test"];  // List of allowed passwords
 
         function login() {
-            const firstName = document.getElementById("firstName").value.trim();
-            const lastName = document.getElementById("lastName").value.trim();
+            const password = document.getElementById("password").value.trim();
             const errorText = document.getElementById("error");
 
-            // Check if name is in the allowed list
-            const isValidUser = allowedNames.some(user =>
-                user.first.toLowerCase() === firstName.toLowerCase() &&
-                user.last.toLowerCase() === lastName.toLowerCase()
-            );
+            // Validate password
+            const isValidPassword = allowedPasswords.includes(password);
 
-            if (isValidUser) {
-                // Store in sessionStorage
-                sessionStorage.setItem("firstName", firstName);
-                sessionStorage.setItem("lastName", lastName);
-
-                // Redirect user
-                const redirectTo = sessionStorage.getItem("redirectTo") || "/";
-                window.location.href = redirectTo;
+            if (isValidPassword) {
+                // Store session data and redirect immediately
+                sessionStorage.setItem("password", password);
+                location.replace(sessionStorage.getItem("redirectTo") || "/"); // Faster redirection
             } else {
-                errorText.textContent = "❌ Invalid name. Access denied.";
+                errorText.textContent = "❌ Invalid password. Access denied.";
             }
         }
     </script>
-
 </body>
 
 </html>

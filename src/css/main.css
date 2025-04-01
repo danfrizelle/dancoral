@@ -11997,4 +11997,6 @@ textarea.form-control-lg {
   --df-btn-disabled-color: #000000;
   --df-btn-disabled-bg: #eeeeee;
   --df-btn-disabled-border-color: #eeeeee;
+  text-transform: uppercase;
+  font-family: "montserrat", sans-serif;
 }

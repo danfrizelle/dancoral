@@ -17,11 +17,16 @@
     <!-- Hide from search engines -->
     <meta name="robots" content="noindex, nofollow">
 
-    <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&family=Prata&display=swap"
+    <script src="./src/js/login.js"></script>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Beth+Ellen&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mrs+Saint+Delafield&family=Prata&display=swap"
         rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/src/css/main.css">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="/src/css/custom.css">
+    <script src="/src/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
@@ -31,12 +36,13 @@
                 <div id="name-entry" class="text-center">
                     <h2 class="mb-4">Enter Your Name</h2>
                     <div class="mb-3">
-                        <input type="text" class="form-control" id="first-name" placeholder="First Name">
+                        <input type="text" class="form-control" id="firstNameInput" placeholder="First Name">
                     </div>
                     <div class="mb-3">
-                        <input type="text" class="form-control" id="last-name" placeholder="Last Name">
+                        <input type="text" class="form-control" id="lastNameInput" placeholder="Last Name">
                     </div>
                     <button class="btn btn-primary" onclick="showRSVPForm()">Continue</button>
+                    <!-- <p id="error" class="text-danger text-center mt-3"></p> -->
                 </div>
             </div>
         </div>
@@ -80,12 +86,7 @@
         </div>
     </div>
 
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script src="./src/js/login.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-    <script src="./src/js/main.js"></script>
+    <script src="/src/js/main.js"></script>
 </body>
 
 </html>

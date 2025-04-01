@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index || Dan and Coral's Wedding</title>
+    <title>Home || Dan and Coral's Wedding</title>
 
     <meta name="description" content="Coming soon!">
 
@@ -17,30 +17,349 @@
     <!-- Hide from search engines -->
     <meta name="robots" content="noindex, nofollow">
 
-    <link href="https://fonts.googleapis.com/css2?family=Beth+Ellen&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Mrs+Saint+Delafield&family=Prata&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="./src/js/login.js"></script>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Beth+Ellen&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mrs+Saint+Delafield&family=Prata&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/src/css/main.css">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="/src/css/custom.css">
+    <script src="/src/js/bootstrap.bundle.min.js"></script>
 </head>
 
-<body class="dvh-100">
-    <div class="container h-100 d-flex flex-column justify-content-center align-items-center text-center">
-        <h1 class="df-heading">
-            <span class="d-block text-uppercase">Dan</span>
-            <span class="d-block mrs-saint-delafield-regular">and</span>
-            <span class="d-block text-uppercase">Coral</span>
-        </h1>
-        <p>Wedding website coming soon...</p>
-        <!-- <span id="countdown"></span> -->
-        <img class="" src="./assets/images/glasses.png" style="width:125px" alt="">
-    </div>
+<body>
+    <header>
+        <div class="container text-center pt-4">
+            <h1>CORAL <span class="libre-baskerville-regular">&</span> DAN</h1>
+        </div>
+    </header>
+    <nav class="navbar navbar-expand text-dark sticky-top">
+        <div class="container-fluid">
+            <div class="navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#schedule">SCHEDULE</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/rsvp.html">RSVP</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faqs">FAQs</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script src="./src/js/login.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-    <script src="./src/js/main.js"></script>
+    <section id="home" class="pb-5">
+        <div class="container-fluid section banner-wrapper mb-5">
+            <div class="banner-container d-flex">
+                <h2 id="banner-text" class="banner-text beth-ellen-regular m-0"><span id="firstName"></span>we're getting married</h2>
+            </div>
+        </div>
+
+        <div class="container section text-center">
+            <div class="row align-items-center">
+                <div class="col-12">
+                    <div class="mb-3">
+
+                        <!-- Start test animation -->
+                        <h2 class="schedule-text mb-4 clickable-text" onclick="changeNames(this)">
+                            CORAL PARKER <span class="libre-baskerville-regular">&</span> DAN FRIZELLE
+                        </h2>
+                        
+                        <style>
+                            .clickable-text {
+                                cursor: pointer;
+                                transition: color 0.3s, transform 0.2s, opacity 0.5s;
+                            }
+                            
+                            .clickable-text:hover {
+                                /* color: #007bff; Change to any highlight color */
+                                /* text-decoration: underline; */
+                                /* transform: scale(1.05); */
+                            }
+                        </style>
+                        
+                        <script>
+                            function changeNames(element) {
+                                const originalText = "CORAL PARKER & DAN FRIZELLE";
+                                const newText = "CORAL PARELLE & DAN PARELLE";
+                                const currentText = element.textContent.trim().replace(/\s+/g, ' '); // Normalize spaces
+                        
+                                element.style.opacity = "0"; // Fade out effect
+                                setTimeout(() => {
+                                    element.innerHTML = currentText === originalText ? newText : originalText;
+                                    element.style.opacity = "1"; // Fade in effect
+                                }, 300); // Slightly reduced delay for a smoother feel
+                            }
+                        </script>
+                        <!-- End test animation -->
+                        
+                        <p class="beth-ellen-regular mb-2rem">invite you to join them for their wedding</p>
+                        <p class="mb-4">Thursday 15th October 2026</p>
+                        <p>at</p>
+                        <p class="mb-0">Coltsfoot Country Retreat</p>
+                        <p class="mb-0">Knebworth</p>
+                        <p class="mb-0">SG3 6SB</p>
+                        <img src="/assets/images/venue.png" style="width:200px;" alt="">
+                    </div>
+                    <div class="d-flex justify-content-center gap-2">
+                        <a href="/rsvp.html" class="btn btn-primary montserrat-regular text-uppercase">RSVP here</a>
+                        <a href="https://maps.app.goo.gl/cMMxmsPFYPnJfWVg7"
+                            class="btn btn-primary montserrat-regular text-uppercase">Directions to venue</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="schedule" class="container-fluid section py-5 bg-light">
+        <div class="row align-items-center justify-content-center text-center">
+            <div class="col-lg-4">
+                <h2 class="schedule-list-heading">SCHEDULE</h2>
+                <ul class="schedule-list-container">
+                    <li class="schedule-list-item animation-item" data-delay="0.05">12:30pm - Guests arrive</li>
+                    <li class="schedule-list-item animation-item" data-delay="0.1">1:30pm - Ceremony</li>
+                    <li class="schedule-list-item animation-item" data-delay="0.15"><span
+                            class="schedule-icon drinks-icon">2:00pm - Drinks & photos</span></li>
+                    <li class="schedule-list-item animation-item" data-delay="0.2">3:30pm - Wedding breakfast & speeches
+                    </li>
+                    <li class="schedule-list-item animation-item" data-delay="0.25"><span
+                            class="schedule-icon party-icon">6:00pm - Party time</span></li>
+                    <li class="schedule-list-item animation-item" data-delay="0.3">8:00pm - First dance & cake cutting
+                    </li>
+                    <li class="schedule-list-item animation-item" data-delay="0.35"><span
+                            class="schedule-icon sparklers-icon">8:30pm - Sparklers</span></li>
+                    <li class="schedule-list-item animation-item" data-delay="0.4">9:00pm - Pizza</li>
+                    <li class="schedule-list-item animation-item mb-0" data-delay="0.45">12:00am - Bed time</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="faqs" class="container section py-5">
+        <div class="row align-items-center justify-content-center text-center">
+            <div class="col-lg-6">
+                <h2>FAQs</h2>
+                <div class="accordion" id="accordionFaqs">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapseOne">
+                                What is the dress code?
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFaqs" aria-labelledby="panelsStayOpen-headingOne">
+                            <div class="accordion-body">
+                                <p>We would love you to dress up with us!</p>
+                                <p>Our colour theme is autumn neutrals, if everyone can stick to this and avoid anything
+                                    too
+                                    bright it will make some amazing photos and vibes!</p>
+                                <div class="colour-pallete-container">
+                                    <span class="colour-pallette-item"></span>
+                                    <span class="colour-pallette-item"></span>
+                                    <span class="colour-pallette-item"></span>
+                                    <span class="colour-pallette-item"></span>
+                                    <span class="colour-pallette-item"></span>
+                                    <span class="colour-pallette-item"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapseTwo">
+                                Can I bring a plus one?
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFaqs" aria-labelledby="panelsStayOpen-headingTwo">
+                            <div class="accordion-body">
+                                <p>If you have a plus one their name will be with yours when you RSVP, if not sorry we
+                                    are
+                                    having a very intimate day so we do not have room for other plus ones.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapseThree">
+                                Can I stay?
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFaqs" aria-labelledby="panelsStayOpen-headingThree">
+                            <div class="accordion-body">
+                                <p>Yes, please let us know if you would like to stay the night at the venue, there is 15
+                                    rooms
+                                    for us to use as the venue is exclusively ours on the day. This costs £165 a night
+                                    for two
+                                    sharing or £265 for a room for four sharing (one double bed and one sofa bed).</p>
+                                <p>Plus you get a full English breakfast in the morning! This is payable in the morning
+                                    when
+                                    checking out.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapseFour">
+                                Can I take pictures?
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFaqs" aria-labelledby="panelsStayOpen-headingFour">
+                            <div class="accordion-body">
+                                <p>We would love to get some photos of the ceremony without phones in but other that
+                                    than please
+                                    do take photos, we have a folder here for everyone to add their photos from the day.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingFive">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapseFive">
+                                When do I need to RSVP?
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFaqs" aria-labelledby="panelsStayOpen-headingFive">
+                            <div class="accordion-body">
+                                <p>The earlier the better, but our deadline is 15/04/26.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingSix">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapseSix">
+                                What time should I arrive?
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFaqs" aria-labelledby="panelsStayOpen-headingSix">
+                            <div class="accordion-body">
+                                <p>Please arrive from 12:30pm, the ceremony will begin promptly at 13:30pm.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingSeven">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseSeven" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapseSeven">
+                                Where should I park?
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseSeven" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFaqs" aria-labelledby="panelsStayOpen-headingSeven">
+                            <div class="accordion-body">
+                                <p>There is plenty of parking at the venue.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingEight">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseEight" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapseEight">
+                                The venue?
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseEight" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFaqs" aria-labelledby="panelsStayOpen-headingEight">
+                            <div class="accordion-body">
+                                <p>We are getting married at Coltsfoot Country Retreat in between Welwyn & Stevenage.
+                                    The
+                                    ceremony and reception is all happening in the same building so there is no travel
+                                    required
+                                    on the day.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingNine">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseNine" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapseNine">
+                                Music?
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseNine" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFaqs" aria-labelledby="panelsStayOpen-headingNine">
+                            <div class="accordion-body">
+                                <p>We are doing our own playlist for the day, if you have any songs you want to hear
+                                    please send
+                                    them to us and we will make sure we add them!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingTen">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseTen" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapseTen">
+                                Drinks?
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseTen" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFaqs" aria-labelledby="panelsStayOpen-headingTen">
+                            <div class="accordion-body">
+                                <p>Sadly we cannot supply an open bar (we wish we could)! But there will be a bar open
+                                    all day
+                                    and all guests will get 2 reception drinks (bubbles or beer), half a bottle of wine
+                                    during
+                                    the wedding breakfast and a glass of bubbles for toasts!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingEleven">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseEleven" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapseEleven">
+                                Gifts?
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseEleven" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFaqs" aria-labelledby="panelsStayOpen-headingEleven">
+                            <div class="accordion-body">
+                                <p>Please spend your money on drinks on the day as we want to get boozy!</p>
+                                <p>However if you are feeling extra generous we are hoping to go to Mexico on our
+                                    honeymoon and anything towards this would be very much appreciated!</p>
+                                <a href="https://www.paypal.com/pool/9d5cnhm3ER?sr=wccr"
+                                    class="btn btn-primary montserrat-regular text-uppercase">Contribute to our
+                                    honeymoon</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer id="footer" class="container section my-5">
+        <div class="row align-items-center justify-content-center text-center">
+            <div class="col-lg-6">
+                <img src="/assets/images/cd-logo.png" alt="" style="width: 70px;">
+                <!-- <h2>C<span class="border-end border-1 border-dark m-2"></span>D</h2>
+                <p class="mb-0 beth-ellen-regular" style="font-size:0.6rem">Est. 2016</p> -->
+            </div>
+        </div>
+    </footer>
+
+    <script src="/src/js/main.js"></script>
 </body>
 
 </html>

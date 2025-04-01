@@ -1,8 +1,11 @@
+// NOT IN USE YET
+
 (function () {
-    const password = sessionStorage.getItem("password");
+    const firstName = sessionStorage.getItem("firstName");
+    const lastName = sessionStorage.getItem("lastName");
 
     // Function to check if user is logged in
-    const isLoggedIn = !!password;
+    const isLoggedIn = !!(firstName && lastName);
 
     if (!isLoggedIn) {
         sessionStorage.setItem("redirectTo", window.location.href);
@@ -11,7 +14,7 @@
 
     // Logout function
     function logout() {
-        sessionStorage.removeItem("password"); // Clears only the password from sessionStorage
+        sessionStorage.clear(); // Clears all sessionStorage values
         location.replace("/login.html");
     }
 

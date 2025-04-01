@@ -1,14 +1,20 @@
-// Redirect if not logged in
-netlifyIdentity.on("init", (user) => {
-    if (!user) {
-        // If user is not logged in, redirect to login page
-        const currentUrl = window.location.href; // Store the current URL
-        localStorage.setItem("redirectTo", currentUrl); // Save the URL in localStorage
-        window.location.href = "login.html"; // Redirect to login page
+(function () {
+    // Function to check if user is logged in
+    function isLoggedIn() {
+        return sessionStorage.getItem("firstName") && sessionStorage.getItem("lastName");
     }
-});
 
-// Handle logout
-netlifyIdentity.on("logout", () => {
-    window.location.href = "login.html"; // Redirect after logout
-});
+    if (!isLoggedIn()) {
+        // Store the current URL before redirecting
+        sessionStorage.setItem("redirectTo", window.location.href);
+        window.location.href = "/login.html"; // Redirect to login page
+    }
+
+    // Logout function
+    window.logout = function () {
+        sessionStorage.removeItem("firstName");
+        sessionStorage.removeItem("lastName");
+        sessionStorage.removeItem("redirectTo");
+        window.location.href = "/login.html"; // Redirect to login after logout
+    };
+})();

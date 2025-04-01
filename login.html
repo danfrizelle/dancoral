@@ -1,50 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Login | Secure Access</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Beth+Ellen&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mrs+Saint+Delafield&family=Prata&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/src/css/main.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/src/css/custom.css">
+    <script src="/src/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-container {
+            max-width: 400px;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-    <h1>Login to Access the Protected Page</h1>
+    <div class="container">
+        <div class="login-container mx-auto">
+            <h2 class="text-center mb-4 text-uppercase">Login</h2>
+            <div class="mb-3">
+                <input type="text" id="firstName" class="form-control" placeholder="First Name">
+            </div>
+            <div class="mb-3">
+                <input type="text" id="lastName" class="form-control" placeholder="Last Name">
+            </div>
+            <button class="btn btn-primary w-100 montserrat-regular text-uppercase" onclick="login()">Login</button>
+            <p id="error" class="text-danger text-center mt-3"></p>
+        </div>
+    </div>
 
-    <!-- Login Button -->
-    <button onclick="netlifyIdentity.open()">Login / Signup</button>
-
-    <!-- Logout Button -->
-    <button id="logout" style="display: none;" onclick="netlifyIdentity.logout()">Logout</button>
-
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script>
-        // Handle login events
-        netlifyIdentity.on("login", (user) => {
-            alert("Welcome, " + user.user_metadata.full_name);
+        const allowedNames = [
+            { first: "Dan", last: "Frizelle" },
+            { first: "Coral", last: "Parker" }
+        ];
 
-            // Get the stored URL from localStorage
-            const redirectTo = localStorage.getItem("redirectTo");
+        function login() {
+            const firstName = document.getElementById("firstName").value.trim();
+            const lastName = document.getElementById("lastName").value.trim();
+            const errorText = document.getElementById("error");
 
-            // Redirect to the protected page they tried to access before logging in
-            if (redirectTo) {
-                window.location.href = redirectTo;  // Redirect to the saved page URL
-                localStorage.removeItem("redirectTo");  // Clear the saved URL after redirect
+            // Check if name is in the allowed list
+            const isValidUser = allowedNames.some(user =>
+                user.first.toLowerCase() === firstName.toLowerCase() &&
+                user.last.toLowerCase() === lastName.toLowerCase()
+            );
+
+            if (isValidUser) {
+                // Store in sessionStorage
+                sessionStorage.setItem("firstName", firstName);
+                sessionStorage.setItem("lastName", lastName);
+
+                // Redirect user
+                const redirectTo = sessionStorage.getItem("redirectTo") || "/";
+                window.location.href = redirectTo;
             } else {
-                window.location.href = "index.html";  // Default redirect if no page is stored
+                errorText.textContent = "❌ Invalid name. Access denied.";
             }
-        });
-
-        // Handle logout
-        netlifyIdentity.on("logout", () => {
-            window.location.href = "login.html"; // Redirect after logout
-        });
-
-        // Show/Hide Logout button
-        netlifyIdentity.on("init", (user) => {
-            if (user) {
-                document.getElementById("logout").style.display = "block";
-            }
-        });
+        }
     </script>
 
 </body>
+
 </html>

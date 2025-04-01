@@ -66,7 +66,7 @@ text.split("").forEach((char, index) => {
 const animationObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         const delay = entry.target.getAttribute('data-delay') || '0';
-        const duration = entry.target.getAttribute('data-duration') || '1.25';
+        const duration = entry.target.getAttribute('data-duration') || '1';
 
         let direction;
         if (window.matchMedia('(min-width: 992px)').matches) {

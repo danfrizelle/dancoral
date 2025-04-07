@@ -12020,6 +12020,13 @@ textarea.form-control-lg {
   font-family: "montserrat", sans-serif;
 }
 
+.form-control {
+  --df-form-border-width: 1px;
+  --df-form-border-color: #000000;
+  --df-form-border-radius: 0;
+  border-radius: var(--df-form-border-radius);
+}
+
 @keyframes scroll {
   0% {
     transform: translateX(0);

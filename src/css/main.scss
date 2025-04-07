@@ -100,6 +100,14 @@ $btn-transition: color .15s ease-in-out, background-color .15s ease-in-out, bord
 
 
 
+.form-control {
+    --df-form-border-width: 1px;
+    --df-form-border-color: #000000;
+    --df-form-border-radius: 0;
+    // border: var(--df-form-border-width) solid var(--df-form-border-color);
+    border-radius: var(--df-form-border-radius);
+}
+
 
 
 

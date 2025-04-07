@@ -12000,3 +12000,69 @@ textarea.form-control-lg {
   text-transform: uppercase;
   font-family: "montserrat", sans-serif;
 }
+
+.btn-secondary {
+  --df-btn-color: #ffffff;
+  --df-btn-bg: #000000;
+  --df-btn-border-color: #000000;
+  --df-btn-hover-color: #000000;
+  --df-btn-hover-bg: transparent;
+  --df-btn-hover-border-color: #000000;
+  --df-btn-focus-shadow-rgb: 49, 132, 253;
+  --df-btn-active-color: #000000;
+  --df-btn-active-bg: transparent;
+  --df-btn-active-border-color: #000000;
+  --df-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --df-btn-disabled-color: #000000;
+  --df-btn-disabled-bg: #eeeeee;
+  --df-btn-disabled-border-color: #eeeeee;
+  text-transform: uppercase;
+  font-family: "montserrat", sans-serif;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-4250px);
+  }
+}
+.slider {
+  background: white;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+  height: 250px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.slider::before, .slider::after {
+  content: "";
+  height: 250px;
+  position: absolute;
+  width: 200px;
+  z-index: 2;
+}
+.slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+.slider::before {
+  left: 0;
+  top: 0;
+}
+.slider .slide-track {
+  animation: scroll 80s linear infinite;
+  display: flex;
+  width: 8500px;
+}
+.slider .slide {
+  height: 250px;
+  width: 250px;
+}
+.slider .slide img {
+  height: 250px;
+  width: 250px;
+}

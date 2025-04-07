@@ -240,6 +240,25 @@ label[for][for]:has(+ select[required])::after {
     font-size: 1.5rem;
 }
 
+.slider-container {
+    position: relative;
+}
+
+.slider-text-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.slider-text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
 
 .font-size-small {
     font-size: 0.75rem;
@@ -278,22 +297,27 @@ label[for][for]:has(+ select[required])::after {
     border: 1px solid #000000;
     background: #000000;
 }
+
 .colour-pallette-item:nth-child(2) {
     border: 1px solid #264025;
     background: #264025;
 }
+
 .colour-pallette-item:nth-child(3) {
     border: 1px solid #7B4B36;
     background: #7B4B36;
 }
+
 .colour-pallette-item:nth-child(4) {
     border: 1px solid #AD6B4B;
     background: #AD6B4B;
 }
+
 .colour-pallette-item:nth-child(5) {
     border: 1px solid #C0AD8D;
     background: #C0AD8D;
 }
+
 .colour-pallette-item:nth-child(6) {
     border: 1px solid #DDCBB7;
     background: #DDCBB7;
@@ -341,6 +365,7 @@ label[for][for]:has(+ select[required])::after {
         opacity: 0;
         transform: translateY(-100%);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -352,6 +377,7 @@ label[for][for]:has(+ select[required])::after {
         opacity: 0;
         transform: translateX(100%);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -363,6 +389,7 @@ label[for][for]:has(+ select[required])::after {
         opacity: 0;
         transform: translateY(100%);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -374,6 +401,7 @@ label[for][for]:has(+ select[required])::after {
         opacity: 0;
         transform: translateX(-100%);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);

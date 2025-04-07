@@ -33,7 +33,8 @@
 <body>
     <header>
         <div class="container text-center pt-4 mb-5">
-            <h1><a href="/" class="text-decoration-none text-dark">CORAL <span class="libre-baskerville-regular">&</span> DAN</a></h1>
+            <h1><a href="/" class="text-decoration-none text-dark">CORAL <span
+                        class="libre-baskerville-regular">&</span> DAN</a></h1>
         </div>
     </header>
     <div class="container">
@@ -44,10 +45,11 @@
                     <p class="mb-0">We can't wait to celebrate with you!</p>
                     <p>Please enter your name below to RSVP</p>
                     <div class="mb-3">
-                        <input type="text" class="form-control" id="firstNameInput" placeholder="First Name">
+                        <input type="text" class="form-control text-center" id="firstNameInput"
+                            placeholder="First Name">
                     </div>
                     <div class="mb-3">
-                        <input type="text" class="form-control" id="lastNameInput" placeholder="Last Name">
+                        <input type="text" class="form-control text-center" id="lastNameInput" placeholder="Last Name">
                     </div>
                     <button class="btn btn-primary" onclick="showRSVPForm()">Continue</button>
                     <!-- <p id="error" class="text-danger text-center mt-3"></p> -->
@@ -74,18 +76,34 @@
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label for="meal" class="form-label">Meal Preference</label>
-                            <select id="meal" class="form-select" name="meal" required>
+                            <label for="starter" class="form-label">Starter</label>
+                            <select id="starter" class="form-select" name="starter" required>
                                 <option value="">Select an option</option>
-                                <option value="chicken">Chicken</option>
-                                <option value="beef">Beef</option>
-                                <option value="vegetarian">Vegetarian</option>
+                                <option value="starterOption1">Option 1</option>
+                                <option value="starterOption2">Option 2</option>
                             </select>
                         </div>
                         <div class="mb-3">
+                            <label for="main" class="form-label">Main</label>
+                            <select id="main" class="form-select" name="main" required>
+                                <option value="">Select an option</option>
+                                <option value="mainOption1">Option 1</option>
+                                <option value="mainOption2">Option 2</option>
+                                <option value="mainOption3">Option 3</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="dessert" class="form-label">Dessert</label>
+                            <select id="dessert" class="form-select" name="dessert" required>
+                                <option value="">Select an option</option>
+                                <option value="dessertOption1">Option 1</option>
+                                <option value="dessertOption2">Option 2</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
                             <label for="message" class="form-label">Message</label>
-                            <textarea id="message" class="form-control" name="message" rows="3"
-                                placeholder="Leave us a message if you'd like!"></textarea>
+                            <textarea id="message" class="form-control" name="message" rows="3"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary w-100">Submit RSVP</button>
                     </form>
@@ -96,7 +114,7 @@
     <footer id="footer" class="container section my-5">
         <div class="row align-items-center justify-content-center text-center">
             <div class="col-lg-6">
-                <img src="/assets/images/cd_logo.png" alt="" style="width: 70px;">
+                <a href="/"><img src="/assets/images/cd_logo.png" alt="" style="width: 70px;"></a>
                 <!-- <h2>C<span class="border-end border-1 border-dark m-2"></span>D</h2>
                 <p class="mb-0 beth-ellen-regular" style="font-size:0.6rem">Est. 2016</p> -->
             </div>

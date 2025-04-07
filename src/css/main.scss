@@ -99,6 +99,12 @@ $btn-transition: color .15s ease-in-out, background-color .15s ease-in-out, bord
 }
 
 
+form {
+    font-family: 'montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
 
 .form-control {
     --df-form-border-width: 1px;
@@ -106,6 +112,27 @@ $btn-transition: color .15s ease-in-out, background-color .15s ease-in-out, bord
     --df-form-border-radius: 0;
     // border: var(--df-form-border-width) solid var(--df-form-border-color);
     border-radius: var(--df-form-border-radius);
+    font-family: 'montserrat', sans-serif;
+    text-transform: uppercase;
+    // text-align: center;
+}
+
+.form-select {
+    --df-form-border-width: 1px;
+    --df-form-border-color: #000000;
+    --df-form-border-radius: 0;
+    // border: var(--df-form-border-width) solid var(--df-form-border-color);
+    border-radius: var(--df-form-border-radius);
+    font-family: 'montserrat', sans-serif;
+    text-transform: uppercase;
+    // text-align: center;
+}
+
+*:focus {
+    outline: 3px solid #d2c8bd !important;
+    outline-offset: 3px !important;
+    box-shadow: none !important;
+    border-color: #ebe1d8 !important;
 }
 
 

@@ -12020,11 +12020,35 @@ textarea.form-control-lg {
   font-family: "montserrat", sans-serif;
 }
 
+form {
+  font-family: "montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
 .form-control {
   --df-form-border-width: 1px;
   --df-form-border-color: #000000;
   --df-form-border-radius: 0;
   border-radius: var(--df-form-border-radius);
+  font-family: "montserrat", sans-serif;
+  text-transform: uppercase;
+}
+
+.form-select {
+  --df-form-border-width: 1px;
+  --df-form-border-color: #000000;
+  --df-form-border-radius: 0;
+  border-radius: var(--df-form-border-radius);
+  font-family: "montserrat", sans-serif;
+  text-transform: uppercase;
+}
+
+*:focus {
+  outline: 3px solid #d2c8bd !important;
+  outline-offset: 3px !important;
+  box-shadow: none !important;
+  border-color: #ebe1d8 !important;
 }
 
 @keyframes scroll {

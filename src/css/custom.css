@@ -93,11 +93,11 @@ section {
 
 
 
-label[for][for]:has(+ input[required])::after,
+/* label[for][for]:has(+ input[required])::after,
 label[for][for]:has(+ select[required])::after {
     content: " *";
     color: red;
-}
+} */
 
 .banner-wrapper {
     width: 100%;

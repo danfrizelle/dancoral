@@ -16,39 +16,190 @@ function getCookie(name) {
 }
 
 const allowedNames = [
-    { first: "Dan", last: "Frizelle" },
-    { first: "Coral", last: "Parker" }
+    {
+        first: "Dan",
+        last: "Frizelle",
+        // plusOne: { first: "Jess", last: "Stone" }
+    },
+    {
+        first: "Coral",
+        last: "Parker",
+        // plusOne: { first: "TBC", last: "TBC" }
+    },
+    {
+        first: "Melanie",
+        last: "Parker",
+        // plusOne: { first: "Travis", last: "Kelce" }
+    },
+    {
+        first: "Indie",
+        last: "Parker",
+        plusOne: { first: "Tim", last: "West" }
+    },
+    {
+        first: "Lauren",
+        last: "Button",
+        // plusOne: { first: "TBC", last: "TBC" }
+    },
+    {
+        first: "Kelly",
+        last: "Morton",
+        plusOne: { first: "Ross", last: "Martin" }
+    },
+    {
+        first: "Becca",
+        last: "Oliver",
+        plusOne: { first: "Jamie", last: "Grounsell" }
+    },
+    {
+        first: "Charlotte",
+        last: "Maddox",
+        // plusOne: { first: "TBC", last: "TBC" }
+    },
+    {
+        first: "Adam",
+        last: "Stones",
+        // plusOne: { first: "TBC", last: "TBC" }
+    },
+    {
+        first: "Molly",
+        last: "Jakes",
+        plusOne: { first: "Jamie", last: "Smith-Squire" }
+    },
+    {
+        first: "Perri",
+        last: "Discoll",
+        // plusOne: { first: "TBC", last: "TBC" }
+    },
+    {
+        first: "Terri",
+        last: "Harvey",
+        plusOne: { first: "Anna", last: "Minter" }
+    },
+    {
+        first: "Georgia",
+        last: "Mateer",
+        plusOne: { first: "Olivia", last: "Richardson" }
+    },
+    {
+        first: "Georgia",
+        last: "Tozer",
+        plusOne: { first: "Lucy", last: "Cous" } //Confirm name
+    },
+    {
+        first: "Emma",
+        last: "Riordan",
+        // plusOne: { first: "TBC", last: "TBC" }
+    },
+    {
+        first: "Janvee",
+        last: "Ruparelia",
+        plusOne: { first: "Akash", last: "Ruparelia" }
+    },
+    {
+        first: "Sareeta",
+        last: "Bagri",
+        // plusOne: { first: "TBC", last: "TBC" }
+    },
+    {
+        first: "Ben",
+        last: "Kelly",
+        plusOne: { first: "Jen", last: "Schramm" } //Confirm name
+    },
+    {
+        first: "Ben",
+        last: "Williams",
+        plusOne: { first: "Kate", last: "Goldrich" }
+    },
+    {
+        first: "Sean",
+        last: "Irvin",
+        plusOne: { first: "Sammie", last: "Callow" }
+    },
+    {
+        first: "Jordan",
+        last: "Lilley",
+        // plusOne: { first: "TBC", last: "TBC" }
+    },
+    {
+        first: "Janine",
+        last: "Frizelle",
+        plusOne: { first: "Fay", last: "Davies" }
+    },
+    {
+        first: "Sam",
+        last: "Axworthy",
+        plusOne: { first: "Alfie", last: "Axworthy" }
+    },
+    {
+        first: "Essel",
+        last: "Uysal",
+        // plusOne: { first: "TBC", last: "TBC" }
+    },
+    {
+        first: "Tom",
+        last: "Gregory",
+        // plusOne: { first: "TBC", last: "TBC" }
+    },
+    {
+        first: "Viv",
+        last: "Bryans",
+        // plusOne: { first: "TBC", last: "TBC" }
+    }
 ];
+
 
 function showRSVPForm() {
     const firstNameInput = document.getElementById("firstNameInput").value.trim();
     const lastNameInput = document.getElementById("lastNameInput").value.trim();
     const name = document.getElementById("name");
-    // const errorText = document.getElementById("error");
+    const nameHeading = document.getElementById("nameHeading");
 
-    const isValidName = allowedNames.some(person =>
+    const plusOneName = document.getElementById("plusOneName");
+    const plusOneNameHeading = document.getElementById("plusOneNameHeading");
+
+    const matchedPerson = allowedNames.find(person =>
         person.first.toLowerCase() === firstNameInput.toLowerCase() &&
         person.last.toLowerCase() === lastNameInput.toLowerCase()
     );
 
-    if (isValidName) {
+    if (matchedPerson) {
         document.getElementById("name-entry").classList.add("d-none");
         document.getElementById("rsvp-form").classList.remove("d-none");
-        name.value = `${firstNameInput} ${lastNameInput}`;
+        var fullName = `${firstNameInput} ${lastNameInput}`
+        name.value = fullName;
         name.disabled = true;
 
-        // Store the first and last name in cookies
-        setCookie("firstName", firstNameInput, 7); // Set cookie for 7 days
-        setCookie("lastName", lastNameInput, 7);   // Set cookie for 7 days
+        // nameHeading.innerHTML = fullName;
 
-        /* Optionally, you can store in sessionStorage too if needed for immediate redirection
-        sessionStorage.setItem("firstName", firstName);
-        sessionStorage.setItem("lastName", lastName);
-        location.replace(sessionStorage.getItem("redirectTo") || "/"); */
+        // Set cookies
+        setCookie("firstName", firstNameInput, 7);
+        setCookie("lastName", lastNameInput, 7);
+
+        // Show plus one fields if applicable
+        const plusOneContainer = document.getElementById("plus-one-fields");
+        if (matchedPerson.plusOne && plusOneContainer) {
+            plusOneContainer.classList.remove("d-none");
+
+            // Combine plus one's first and last name
+            var plusOneFullName = `${matchedPerson.plusOne.first} ${matchedPerson.plusOne.last}`;
+            plusOneName.value = plusOneFullName;
+            plusOneName.disabled = true;
+
+            // plusOneNameHeading.innerHTML = `${matchedPerson.plusOne.first} ${matchedPerson.plusOne.last}`;
+        }
+        if (matchedPerson.plusOne) {
+            var combinedNames = `${fullName} & \n ${plusOneFullName}`;
+        } else {
+            var combinedNames = `${fullName}`;
+        }
+        const combinedNamesContainer = document.getElementById("combinedHeadingContainer");
+        combinedNamesContainer.innerText = combinedNames;
     } else {
         alert("Your name is not on the guest list.");
     }
 }
+
 
 
 // On page load or when needed, you can check for the cookies and pre-fill the fields

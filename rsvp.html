@@ -32,7 +32,7 @@
 
 <body>
     <header>
-        <div class="container text-center pt-4 mb-5">
+        <div class="container text-center pt-4 mb-3">
             <h1><a href="/" class="text-decoration-none text-dark">CORAL <span
                         class="libre-baskerville-regular">&</span> DAN</a></h1>
         </div>
@@ -62,49 +62,114 @@
                 <div class="col-10 col-lg-4">
                     <!-- <h2 class="text-center mb-4">Wedding RSVP</h2> -->
                     <form name="RSVP" action="/rsvp-confirmation.html" method="POST" data-netlify="true">
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Full Name</label>
-                            <input type="text" class="form-control" id="name" name="name"
-                                placeholder="Enter your full name" required>
+                        <div class="person-1-form">
+                            <div class="text-center mb-4">
+                                <p class="beth-ellen-regular mb-4" style="text-transform: lowercase;">invites you</p>
+                                <p class="libre-baskerville-regular" style="letter-spacing: 3px;"><span id="combinedHeadingContainer"></span></p>
+                                <p class="beth-ellen-regular" style="text-transform: lowercase;">to celebrate their wedding</p>
+                                <p class="libre-baskerville-regular" style="text-transform: none; font-size: 10px;">Please RSVP below by 15.04.26</p>
+                            </div>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="name" name="name"
+                                    placeholder="Enter your full name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="attending" class="form-label">Will you attend?</label>
+                                <select id="attending" class="form-select" name="attending" required>
+                                    <option value="">Select an option</option>
+                                    <option value="yes">Yes, I will be there!</option>
+                                    <option value="no">Sorry, I can't make it</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="starter" class="form-label">Starter</label>
+                                <select id="starter" class="form-select" name="starter" required>
+                                    <option value="">Select an option</option>
+                                    <option value="starterOption1">Option 1</option>
+                                    <option value="starterOption2">Option 2</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="main" class="form-label">Main</label>
+                                <select id="main" class="form-select" name="main" required>
+                                    <option value="">Select an option</option>
+                                    <option value="mainOption1">Option 1</option>
+                                    <option value="mainOption2">Option 2</option>
+                                    <option value="mainOption3">Option 3</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="dessert" class="form-label">Dessert</label>
+                                <select id="dessert" class="form-select" name="dessert" required>
+                                    <option value="">Select an option</option>
+                                    <option value="dessertOption1">Option 1</option>
+                                    <option value="dessertOption2">Option 2</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="stayOvernight" class="form-label">Would you like to stay overnight at the venue?</label>
+                                <select id="stayOvernight" class="form-select" name="stayOvernight" required>
+                                    <option value="">Select an option</option>
+                                    <option value="dessertOption1">Yes</option>
+                                    <option value="dessertOption2">No</option>
+                                </select>
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="attending" class="form-label">Will you attend?</label>
-                            <select id="attending" class="form-select" name="attending" required>
-                                <option value="">Select an option</option>
-                                <option value="yes">Yes, I will be there!</option>
-                                <option value="no">Sorry, I can't make it</option>
-                            </select>
+                        <!-- Plus one form-->
+                        <div id="plus-one-fields" class="plus-one-form mt-5 d-none">
+                            <div class="mb-3">
+                                <label for="plusOneName" class="form-label">Plus one Full Name</label>
+                                <input type="text" class="form-control" id="plusOneName" name="plusOneName"
+                                    placeholder="Enter your full name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="plusOneAttending" class="form-label">Will you attend?</label>
+                                <select id="plusOneAttending" class="form-select" name="plusOneAttending" required>
+                                    <option value="">Select an option</option>
+                                    <option value="yes">Yes, I will be there!</option>
+                                    <option value="no">Sorry, I can't make it</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="plusOneStarter" class="form-label">Starter</label>
+                                <select id="plusOneStarter" class="form-select" name="plusOneStarter" required>
+                                    <option value="">Select an option</option>
+                                    <option value="starterOption1">Option 1</option>
+                                    <option value="starterOption2">Option 2</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="plusOneMain" class="form-label">Main</label>
+                                <select id="plusOneMain" class="form-select" name="plusOneMain" required>
+                                    <option value="">Select an option</option>
+                                    <option value="mainOption1">Option 1</option>
+                                    <option value="mainOption2">Option 2</option>
+                                    <option value="mainOption3">Option 3</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="plusOneDessert" class="form-label">Dessert</label>
+                                <select id="plusOneDessert" class="form-select" name="plusOneDessert" required>
+                                    <option value="">Select an option</option>
+                                    <option value="dessertOption1">Option 1</option>
+                                    <option value="dessertOption2">Option 2</option>
+                                </select>
+                            </div>
+                            <div class="mb-5">
+                                <label for="plusOneStayOvernight" class="form-label">Would you like to stay overnight at the venue?</label>
+                                <select id="plusOneStayOvernight" class="form-select" name="plusOneStayOvernight" required>
+                                    <option value="">Select an option</option>
+                                    <option value="dessertOption1">Yes</option>
+                                    <option value="dessertOption2">No</option>
+                                </select>
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="starter" class="form-label">Starter</label>
-                            <select id="starter" class="form-select" name="starter" required>
-                                <option value="">Select an option</option>
-                                <option value="starterOption1">Option 1</option>
-                                <option value="starterOption2">Option 2</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="main" class="form-label">Main</label>
-                            <select id="main" class="form-select" name="main" required>
-                                <option value="">Select an option</option>
-                                <option value="mainOption1">Option 1</option>
-                                <option value="mainOption2">Option 2</option>
-                                <option value="mainOption3">Option 3</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="dessert" class="form-label">Dessert</label>
-                            <select id="dessert" class="form-select" name="dessert" required>
-                                <option value="">Select an option</option>
-                                <option value="dessertOption1">Option 1</option>
-                                <option value="dessertOption2">Option 2</option>
-                            </select>
-                        </div>
-
                         <div class="mb-3">
                             <label for="message" class="form-label">Message</label>
                             <textarea id="message" class="form-control" name="message" rows="3"></textarea>
                         </div>
+                        
                         <button type="submit" class="btn btn-primary w-100">Submit RSVP</button>
                     </form>
                 </div>

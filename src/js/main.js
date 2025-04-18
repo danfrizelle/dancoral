@@ -153,9 +153,11 @@ function showRSVPForm() {
     const firstNameInput = document.getElementById("firstNameInput").value.trim();
     const lastNameInput = document.getElementById("lastNameInput").value.trim();
     const name = document.getElementById("name");
+    // console.log(name.value);
     const nameHeading = document.getElementById("nameHeading");
 
     const plusOneName = document.getElementById("plusOneName");
+    // console.log(plusOneName.value);
     const plusOneNameHeading = document.getElementById("plusOneNameHeading");
 
     const matchedPerson = allowedNames.find(person =>
@@ -169,6 +171,8 @@ function showRSVPForm() {
         var fullName = `${firstNameInput} ${lastNameInput}`
         name.value = fullName;
         name.disabled = true;
+
+        console.log(name.value);
 
         // nameHeading.innerHTML = fullName;
 
@@ -185,6 +189,8 @@ function showRSVPForm() {
             var plusOneFullName = `${matchedPerson.plusOne.first} ${matchedPerson.plusOne.last}`;
             plusOneName.value = plusOneFullName;
             plusOneName.disabled = true;
+
+            console.log(plusOneName.value);
 
             // plusOneNameHeading.innerHTML = `${matchedPerson.plusOne.first} ${matchedPerson.plusOne.last}`;
         }

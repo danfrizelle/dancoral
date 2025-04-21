@@ -148,6 +148,17 @@ const allowedNames = [
     }
 ];
 
+function openMaps() {
+const address = encodeURIComponent("Coltsfoot Country Retreat, Knebworth, SG3 6SB");
+const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+const url = isIOS 
+    ? `http://maps.apple.com/?q=${address}`
+    : `https://www.google.com/maps/search/?api=1&query=${address}`;
+
+window.open(url, '_blank');
+}
+
 
 function showRSVPForm() {
     const firstNameInput = document.getElementById("firstNameInput").value.trim();

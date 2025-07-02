@@ -12056,7 +12056,7 @@ form {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-4250px);
+    transform: translateX(-1500px);
   }
 }
 .slider {
@@ -12085,9 +12085,9 @@ form {
   top: 0;
 }
 .slider .slide-track {
-  animation: scroll 80s linear infinite;
+  animation: scroll 28s linear infinite;
   display: flex;
-  width: 8500px;
+  width: 3000px; /* 12 images * 250px width */
 }
 .slider .slide {
   height: 250px;

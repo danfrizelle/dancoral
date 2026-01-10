@@ -294,13 +294,13 @@ label[for][for]:has(+ select[required])::after {
 }
 
 .colour-pallette-item:nth-child(1) {
-    border: 1px solid #000000;
-    background: #000000;
+    border: 1px solid #264025;
+    background: #264025;
 }
 
 .colour-pallette-item:nth-child(2) {
-    border: 1px solid #264025;
-    background: #264025;
+    border: 1px solid #6E612F;
+    background: #6E612F;
 }
 
 .colour-pallette-item:nth-child(3) {
@@ -314,13 +314,8 @@ label[for][for]:has(+ select[required])::after {
 }
 
 .colour-pallette-item:nth-child(5) {
-    border: 1px solid #d1a485;
-    background: #d1a485;
-}
-
-.colour-pallette-item:nth-child(6) {
-    border: 1px solid #c5cfc6;
-    background: #c5cfc6;
+    border: 1px solid #C2A58D;
+    background: #C2A58D;
 }
 
 
@@ -447,4 +442,8 @@ label[for][for]:has(+ select[required])::after {
         font-size: 1rem;
         letter-spacing: 4px;
     }
+}
+
+.accordion-body *:last-child {
+    margin-bottom: 0;
 }

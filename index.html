@@ -23,10 +23,10 @@
         href="https://fonts.googleapis.com/css2?family=Beth+Ellen&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mrs+Saint+Delafield&family=Prata&display=swap"
         rel="stylesheet">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/src/css/main.css">
+    <link rel="stylesheet" href="./src/css/main.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/src/css/custom.css">
-    <script src="/src/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./src/css/custom.css">
+    <script src="./src/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
@@ -54,7 +54,7 @@
                 <div class="slide-track">
                     <script>
                         for (let i = 1; i <= 12; i++) {
-                            document.write(`<div class='slide'><img src='/assets/images/carousel/${i}.jpg' alt='Image ${i}'></div>`);
+                            document.write(`<div class='slide'><img src='./assets/images/carousel/${i}.jpg' alt='Image ${i}'></div>`);
                         }
                     </script>
                 </div>
@@ -196,13 +196,12 @@
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
                                 aria-controls="panelsStayOpen-collapseThree">
-                                Can I stay at the venue?
+                                Staying at the venue?
                             </button>
                         </h2>
                         <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
                             data-bs-parent="#accordionFaqs" aria-labelledby="panelsStayOpen-headingThree">
-                            <div class="accordion-body">
-                                <p>Yes, please let us know if you would like to stay at the venue. 
+                            <div class="accordion-body"> 
                                 <p>This costs £165 for the night which is payable the following morning when checking out.</p>
                                 <p>A full English breakfast in the morning is included in this price.</p>
                             </div>

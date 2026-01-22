@@ -44,7 +44,7 @@ const allowedNames = [
     {
         first: "Kelly",
         last: "Morton",
-        plusOne: { first: "Ross", last: "Martin" }
+        // plusOne: { first: "Ross", last: "Martin" }
     },
     {
         first: "Becca",
@@ -54,12 +54,7 @@ const allowedNames = [
     {
         first: "Charlotte",
         last: "Maddox",
-        // plusOne: { first: "TBC", last: "TBC" }
-    },
-    {
-        first: "Adam",
-        last: "Stones",
-        // plusOne: { first: "TBC", last: "TBC" }
+        plusOne: { first: "Adam", last: "Stones" }
     },
     {
         first: "Molly",
@@ -69,7 +64,7 @@ const allowedNames = [
     {
         first: "Perri",
         last: "Discoll",
-        // plusOne: { first: "TBC", last: "TBC" }
+        plusOne: { first: "Holly", last: "Prosser" }
     },
     {
         first: "Terri",
@@ -84,7 +79,7 @@ const allowedNames = [
     {
         first: "Georgia",
         last: "Tozer",
-        plusOne: { first: "Lucy", last: "Cous" } //Confirm name
+        plusOne: { first: "Lucy", last: "Cousins" }
     },
     {
         first: "Emma",
@@ -99,12 +94,12 @@ const allowedNames = [
     {
         first: "Sareeta",
         last: "Bagri",
-        // plusOne: { first: "TBC", last: "TBC" }
+        plusOne: { first: "Jordan", last: "Lilley" }
     },
     {
         first: "Ben",
         last: "Kelly",
-        plusOne: { first: "Jen", last: "Schramm" } //Confirm name
+        plusOne: { first: "Jen", last: "Schramm" }
     },
     {
         first: "Ben",
@@ -115,11 +110,6 @@ const allowedNames = [
         first: "Sean",
         last: "Irvin",
         plusOne: { first: "Sammie", last: "Callow" }
-    },
-    {
-        first: "Jordan",
-        last: "Lilley",
-        // plusOne: { first: "TBC", last: "TBC" }
     },
     {
         first: "Janine",
@@ -134,7 +124,7 @@ const allowedNames = [
     {
         first: "Essel",
         last: "Uysal",
-        // plusOne: { first: "TBC", last: "TBC" }
+        plusOne: { first: "Hez", last: "" } //confirm name
     },
     {
         first: "Tom",
@@ -149,14 +139,14 @@ const allowedNames = [
 ];
 
 function openMaps() {
-const address = encodeURIComponent("Coltsfoot Country Retreat, Knebworth, SG3 6SB");
-const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    const address = encodeURIComponent("Coltsfoot Country Retreat, Knebworth, SG3 6SB");
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
-const url = isIOS 
-    ? `http://maps.apple.com/?q=${address}`
-    : `https://www.google.com/maps/search/?api=1&query=${address}`;
+    const url = isIOS
+        ? `http://maps.apple.com/?q=${address}`
+        : `https://www.google.com/maps/search/?api=1&query=${address}`;
 
-window.open(url, '_blank');
+    window.open(url, '_blank');
 }
 
 

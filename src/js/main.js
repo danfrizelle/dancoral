@@ -171,7 +171,7 @@ function showRSVPForm() {
         document.getElementById("rsvp-form").classList.remove("d-none");
         var fullName = `${firstNameInput} ${lastNameInput}`
         name.value = fullName;
-        name.readonly = true;
+        name.readOnly = true;
 
         console.log(name.value);
 
@@ -181,20 +181,35 @@ function showRSVPForm() {
         setCookie("firstName", firstNameInput, 7);
         setCookie("lastName", lastNameInput, 7);
 
-        // Show plus one fields if applicable
+        // Plus one handling
         const plusOneContainer = document.getElementById("plus-one-fields");
-        if (matchedPerson.plusOne && plusOneContainer) {
+        const plusOneFields = plusOneContainer.querySelectorAll("input, select, textarea");
+
+        if (matchedPerson.plusOne) {
+            // Has a plus one → show & enable fields
             plusOneContainer.classList.remove("d-none");
 
-            // Combine plus one's first and last name
+            plusOneFields.forEach(field => {
+                field.disabled = false;
+            });
+
+            // Set plus one full name
             var plusOneFullName = `${matchedPerson.plusOne.first} ${matchedPerson.plusOne.last}`;
             plusOneName.value = plusOneFullName;
-            plusOneName.readonly = true;
+            plusOneName.readOnly = true;
 
             console.log(plusOneName.value);
-
             // plusOneNameHeading.innerHTML = `${matchedPerson.plusOne.first} ${matchedPerson.plusOne.last}`;
+        } else {
+            // No plus one → hide & disable everything
+            plusOneContainer.classList.add("d-none");
+
+            plusOneFields.forEach(field => {
+                field.disabled = true;
+                field.value = "";
+            });
         }
+
         if (matchedPerson.plusOne) {
             var combinedNames = `${fullName} & \n ${plusOneFullName}`;
         } else {

@@ -62,7 +62,7 @@ const allowedNames = [
     },
     {
         first: "Perri",
-        last: "Discoll",
+        last: "Driscoll",
         plusOne: { first: "Holly", last: "Prosser" }
     },
     {

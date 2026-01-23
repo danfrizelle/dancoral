@@ -156,6 +156,7 @@ function showRSVPForm() {
     // console.log(name.value);
     const nameHeading = document.getElementById("nameHeading");
 
+    const personOneContainer = document.getElementById("person-one-fields");
     const person1Attending = document.getElementById("attending");
     const person1Meals = document.querySelector(".person-1_meal-selection");
 
@@ -186,6 +187,9 @@ function showRSVPForm() {
                 person1Meals.classList.add("d-none");
             }
         });
+        personOneContainer.querySelectorAll("select").forEach(select => {
+            select.required = true;
+        });
 
         console.log(name.value);
 
@@ -204,6 +208,10 @@ function showRSVPForm() {
             var plusOneFullName = `${matchedPerson.plusOne.first} ${matchedPerson.plusOne.last}`;
             plusOneName.value = plusOneFullName;
             plusOneName.readOnly = true;
+
+            plusOneContainer.querySelectorAll("select").forEach(select => {
+                select.required = true;
+            });
 
             // Plus 1 toggle
             plusOneAttending.addEventListener("change", function () {

@@ -23,8 +23,7 @@ const allowedNames = [
     },
     {
         first: "Coral",
-        last: "Parker",
-        // plusOne: { first: "TBC", last: "TBC" }
+        last: "Parker"
     },
     {
         first: "Melanie",

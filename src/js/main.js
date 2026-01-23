@@ -237,17 +237,18 @@ if (storedLastName && lastNameInput) {
 
 
 let bannerText = document.getElementById("banner-text");
-let text = bannerText.innerText;
-bannerText.innerHTML = ""; // Clear original text
+if (bannerText) {
+    let text = bannerText.innerText;
+    bannerText.innerHTML = ""; // Clear original text
 
-// Wrap each letter in a span and apply delay
-text.split("").forEach((char, index) => {
-    const span = document.createElement("span");
-    span.innerText = char;
-    span.style.animationDelay = `${index * 0.1}s`; // Delay increases per letter
-    bannerText.appendChild(span);
-});
-
+    // Wrap each letter in a span and apply delay
+    text.split("").forEach((char, index) => {
+        const span = document.createElement("span");
+        span.innerText = char;
+        span.style.animationDelay = `${index * 0.1}s`; // Delay increases per letter
+        bannerText.appendChild(span);
+    });
+}
 
 
 

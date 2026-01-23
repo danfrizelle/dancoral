@@ -78,7 +78,7 @@
                 sessionStorage.setItem("password", password);
                 location.replace(sessionStorage.getItem("redirectTo") || "/"); // Faster redirection
             } else {
-                errorText.textContent = "❌ Invalid password. Access denied.";
+                errorText.textContent = "❌ Invalid password.";
             }
         }
     </script>

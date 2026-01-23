@@ -181,32 +181,40 @@ function showRSVPForm() {
         setCookie("firstName", firstNameInput, 7);
         setCookie("lastName", lastNameInput, 7);
 
-        // Plus one handling
+        // Plus one handling (Netlify-safe)
         const plusOneContainer = document.getElementById("plus-one-fields");
         const plusOneFields = plusOneContainer.querySelectorAll("input, select, textarea");
 
         if (matchedPerson.plusOne) {
-            // Has a plus one → show & enable fields
+            // HAS plus one
             plusOneContainer.classList.remove("d-none");
 
             plusOneFields.forEach(field => {
+                // Restore original name from data attribute
+                if (field.dataset.originalName) {
+                    field.name = field.dataset.originalName;
+                }
                 field.disabled = false;
             });
 
-            // Set plus one full name
-            var plusOneFullName = `${matchedPerson.plusOne.first} ${matchedPerson.plusOne.last}`;
+            // Set plus one name
+            const plusOneFullName = `${matchedPerson.plusOne.first} ${matchedPerson.plusOne.last}`;
             plusOneName.value = plusOneFullName;
             plusOneName.readOnly = true;
 
-            console.log(plusOneName.value);
-            // plusOneNameHeading.innerHTML = `${matchedPerson.plusOne.first} ${matchedPerson.plusOne.last}`;
         } else {
-            // No plus one → hide & disable everything
+            // NO plus one — completely remove from Netlify submission
             plusOneContainer.classList.add("d-none");
 
             plusOneFields.forEach(field => {
-                field.disabled = true;
+                // Store original name once
+                if (!field.dataset.originalName) {
+                    field.dataset.originalName = field.name;
+                }
+
+                field.name = "";      // ← THIS is the magic line
                 field.value = "";
+                field.disabled = true;
             });
         }
 

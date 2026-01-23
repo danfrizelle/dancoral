@@ -171,7 +171,7 @@ function showRSVPForm() {
         document.getElementById("rsvp-form").classList.remove("d-none");
         var fullName = `${firstNameInput} ${lastNameInput}`
         name.value = fullName;
-        name.disabled = true;
+        name.readonly = true;
 
         console.log(name.value);
 
@@ -189,7 +189,7 @@ function showRSVPForm() {
             // Combine plus one's first and last name
             var plusOneFullName = `${matchedPerson.plusOne.first} ${matchedPerson.plusOne.last}`;
             plusOneName.value = plusOneFullName;
-            plusOneName.disabled = true;
+            plusOneName.readonly = true;
 
             console.log(plusOneName.value);
 

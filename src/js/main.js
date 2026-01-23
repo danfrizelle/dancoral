@@ -181,43 +181,20 @@ function showRSVPForm() {
         setCookie("firstName", firstNameInput, 7);
         setCookie("lastName", lastNameInput, 7);
 
-        // Plus one handling (Netlify-safe)
+        // Show plus one fields if applicable
         const plusOneContainer = document.getElementById("plus-one-fields");
-        const plusOneFields = plusOneContainer.querySelectorAll("input, select, textarea");
-
-        if (matchedPerson.plusOne) {
-            // HAS plus one
+        if (matchedPerson.plusOne && plusOneContainer) {
             plusOneContainer.classList.remove("d-none");
 
-            plusOneFields.forEach(field => {
-                // Restore original name from data attribute
-                if (field.dataset.originalName) {
-                    field.name = field.dataset.originalName;
-                }
-                field.disabled = false;
-            });
-
-            // Set plus one name
-            const plusOneFullName = `${matchedPerson.plusOne.first} ${matchedPerson.plusOne.last}`;
+            // Combine plus one's first and last name
+            var plusOneFullName = `${matchedPerson.plusOne.first} ${matchedPerson.plusOne.last}`;
             plusOneName.value = plusOneFullName;
             plusOneName.readOnly = true;
 
-        } else {
-            // NO plus one — completely remove from Netlify submission
-            plusOneContainer.classList.add("d-none");
+            console.log(plusOneName.value);
 
-            plusOneFields.forEach(field => {
-                // Store original name once
-                if (!field.dataset.originalName) {
-                    field.dataset.originalName = field.name;
-                }
-
-                field.name = "";      // ← THIS is the magic line
-                field.value = "";
-                field.disabled = true;
-            });
+            // plusOneNameHeading.innerHTML = `${matchedPerson.plusOne.first} ${matchedPerson.plusOne.last}`;
         }
-
         if (matchedPerson.plusOne) {
             var combinedNames = `${fullName} & \n ${plusOneFullName}`;
         } else {

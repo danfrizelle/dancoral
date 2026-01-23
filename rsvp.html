@@ -61,6 +61,9 @@
             <div class="row justify-content-center">
                 <div class="col-10 col-lg-4">
                     <form name="RSVP" action="/rsvp-confirmation.html" method="POST" data-netlify="true">
+                        <input type="hidden" name="subject" value="New RSVP from %{formName} (%{submissionId})" />
+                        <input type="hidden" name="email" value="danfrizelle@hotmail.co.uk" />
+
                         <div class="person-1-form">
                             <div class="text-center mb-4">
                                 <p class="beth-ellen-regular mb-4" style="text-transform: lowercase;">invite you</p>

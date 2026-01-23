@@ -156,9 +156,15 @@ function showRSVPForm() {
     // console.log(name.value);
     const nameHeading = document.getElementById("nameHeading");
 
+    const person1Attending = document.getElementById("attending");
+    const person1Meals = document.querySelector(".person-1_meal-selection");
+
     const plusOneName = document.getElementById("plusOneName");
     // console.log(plusOneName.value);
     const plusOneNameHeading = document.getElementById("plusOneNameHeading");
+
+    const plusOneAttending = document.getElementById("plusOneAttending");
+    const plusOneMeals = document.querySelector(".plus-1_meal-selection");
 
     const matchedPerson = allowedNames.find(person =>
         person.first.toLowerCase() === firstNameInput.toLowerCase() &&
@@ -171,6 +177,15 @@ function showRSVPForm() {
         var fullName = `${firstNameInput} ${lastNameInput}`
         name.value = fullName;
         name.readOnly = true;
+
+        // Person 1 toggle
+        person1Attending.addEventListener("change", function () {
+            if (this.value === "yes") {
+                person1Meals.classList.remove("d-none");
+            } else {
+                person1Meals.classList.add("d-none");
+            }
+        });
 
         console.log(name.value);
 
@@ -189,6 +204,15 @@ function showRSVPForm() {
             var plusOneFullName = `${matchedPerson.plusOne.first} ${matchedPerson.plusOne.last}`;
             plusOneName.value = plusOneFullName;
             plusOneName.readOnly = true;
+
+            // Plus 1 toggle
+            plusOneAttending.addEventListener("change", function () {
+                if (this.value === "yes") {
+                    plusOneMeals.classList.remove("d-none");
+                } else {
+                    plusOneMeals.classList.add("d-none");
+                }
+            });
 
             console.log(plusOneName.value);
 

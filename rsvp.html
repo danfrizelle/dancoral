@@ -51,7 +51,7 @@
                     <div class="mb-3">
                         <input type="text" class="form-control text-center" id="lastNameInput" placeholder="Last Name">
                     </div>
-                    <button class="btn btn-primary" onclick="showRSVPForm()">Continue</button>
+                    <button class="btn btn-primary" type="button" onclick="showRSVPForm()">Continue</button>
                     <!-- <p id="error" class="text-danger text-center mt-3"></p> -->
                 </div>
             </div>
@@ -82,34 +82,37 @@
                                 </select>
                             </div>
 
-                            <div class="mb-3">
-                                <label for="starter" class="form-label">Starter</label>
-                                <select id="starter" class="form-select" name="starter" required>
-                                    <option value="">Select an option</option>
-                                    <option value="prawns">Pan-Fried Tiger Prawns With Thai Salad & Sweet Chilli Dressing</option>
-                                    <option value="tart">Tomato & Mozzarella Tart With Rocket & Balsamic</option>
-                                </select>
+                            <div class="person-1_meal-selection d-none">
+                                <div class="mb-3">
+                                    <label for="starter" class="form-label">Starter</label>
+                                    <select id="starter" class="form-select" name="starter" required>
+                                        <option value="">Select an option</option>
+                                        <option value="prawns">Pan-Fried Tiger Prawns With Thai Salad & Sweet Chilli Dressing</option>
+                                        <option value="tart">Tomato & Mozzarella Tart With Rocket & Balsamic</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="main" class="form-label">Main</label>
+                                    <select id="main" class="form-select" name="main" required>
+                                        <option value="">Select an option</option>
+                                        <option value="chicken">Chicken Breast Filled With Boursin Wrapped In Parma Ham With Olive Oil & Basil Mash</option>
+                                        <option value="lamb">Slow Roasted Shank Of Lamb With Sweet Potato Mash</option>
+                                        <option value="risotto">Wild Mushroom Risotto With Rocket, Parmesan & Roasted Vine Tomatoes</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="dessert" class="form-label">Dessert</label>
+                                    <select id="dessert" class="form-select" name="dessert" required>
+                                        <option value="">Select an option</option>
+                                        <option value="brownie">Warm Chocolate Fudge Brownie With Salted Caramel Sauce & Ice Cream</option>
+                                        <option value="custard">Vanilla Pod Crème Brûlée With Butter Biscuit & Compote Of Strawberries</option>
+                                    </select>
+                                </div>
+                            </div>
                             </div>
 
-                            <div class="mb-3">
-                                <label for="main" class="form-label">Main</label>
-                                <select id="main" class="form-select" name="main" required>
-                                    <option value="">Select an option</option>
-                                    <option value="chicken">Chicken Breast Filled With Boursin Wrapped In Parma Ham With Olive Oil & Basil Mash</option>
-                                    <option value="lamb">Slow Roasted Shank Of Lamb With Sweet Potato Mash</option>
-                                    <option value="risotto">Wild Mushroom Risotto With Rocket, Parmesan & Roasted Vine Tomatoes</option>
-                                </select>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="dessert" class="form-label">Dessert</label>
-                                <select id="dessert" class="form-select" name="dessert" required>
-                                    <option value="">Select an option</option>
-                                    <option value="brownie">Warm Chocolate Fudge Brownie With Salted Caramel Sauce & Ice Cream</option>
-                                    <option value="custard">Vanilla Pod Crème Brûlée With Butter Biscuit & Compote Of Strawberries</option>
-                                </select>
-                            </div>
-                        </div>
 
                         <div id="plus-one-fields" class="person-1-form_plus-one my-5 d-none">
                             <div class="mb-3">
@@ -126,40 +129,40 @@
                                 </select>
                             </div>
 
-                            <div class="mb-3">
-                                <label for="plusOneStarter" class="form-label">Starter</label>
-                                <select id="plusOneStarter" class="form-select" name="plusOneStarter">
-                                    <option value="">Select an option</option>
-                                    <option value="prawns">Pan-Fried Tiger Prawns With Thai Salad & Sweet Chilli Dressing</option>
-                                    <option value="tart">Tomato & Mozzarella Tart With Rocket & Balsamic</option>
-                                </select>
-                            </div>
+                            <div class="plus-1_meal-selection d-none">
+                                <div class="mb-3">
+                                    <label for="plusOneStarter" class="form-label">Starter</label>
+                                    <select id="plusOneStarter" class="form-select" name="plusOneStarter">
+                                        <option value="">Select an option</option>
+                                        <option value="prawns">Pan-Fried Tiger Prawns With Thai Salad & Sweet Chilli Dressing</option>
+                                        <option value="tart">Tomato & Mozzarella Tart With Rocket & Balsamic</option>
+                                    </select>
+                                </div>
 
-                            <div class="mb-3">
-                                <label for="plusOneMain" class="form-label">Main</label>
-                                <select id="plusOneMain" class="form-select" name="plusOneMain">
-                                    <option value="">Select an option</option>
-                                    <option value="chicken">Chicken Breast Filled With Boursin Wrapped In Parma Ham With Olive Oil & Basil Mash</option>
-                                    <option value="lamb">Slow Roasted Shank Of Lamb With Sweet Potato Mash</option>
-                                    <option value="risotto">Wild Mushroom Risotto With Rocket, Parmesan & Roasted Vine Tomatoes</option>
-                                </select>
-                            </div>
+                                <div class="mb-3">
+                                    <label for="plusOneMain" class="form-label">Main</label>
+                                    <select id="plusOneMain" class="form-select" name="plusOneMain">
+                                        <option value="">Select an option</option>
+                                        <option value="chicken">Chicken Breast Filled With Boursin Wrapped In Parma Ham With Olive Oil & Basil Mash</option>
+                                        <option value="lamb">Slow Roasted Shank Of Lamb With Sweet Potato Mash</option>
+                                        <option value="risotto">Wild Mushroom Risotto With Rocket, Parmesan & Roasted Vine Tomatoes</option>
+                                    </select>
+                                </div>
 
-                            <div class="mb-3">
-                                <label for="plusOneDessert" class="form-label">Dessert</label>
-                                <select id="plusOneDessert" class="form-select" name="plusOneDessert">
-                                    <option value="">Select an option</option>
-                                    <option value="brownie">Warm Chocolate Fudge Brownie With Salted Caramel Sauce & Ice Cream</option>
-                                    <option value="custard">Vanilla Pod Crème Brûlée With Butter Biscuit & Compote Of Strawberries</option>
-                                </select>
+                                <div class="mb-3">
+                                    <label for="plusOneDessert" class="form-label">Dessert</label>
+                                    <select id="plusOneDessert" class="form-select" name="plusOneDessert">
+                                        <option value="">Select an option</option>
+                                        <option value="brownie">Warm Chocolate Fudge Brownie With Salted Caramel Sauce & Ice Cream</option>
+                                        <option value="custard">Vanilla Pod Crème Brûlée With Butter Biscuit & Compote Of Strawberries</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
-
                         <div class="mb-3">
                             <label for="message" class="form-label">Message</label>
                             <textarea id="message" class="form-control" name="message" rows="3"></textarea>
                         </div>
-
                         <button type="submit" class="btn btn-primary w-100">Submit RSVP</button>
                     </form>
                 </div>

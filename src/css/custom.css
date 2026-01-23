@@ -447,3 +447,9 @@ label[for][for]:has(+ select[required])::after {
 .accordion-body *:last-child {
     margin-bottom: 0;
 }
+
+.form-control[readonly] {
+    background-color: #f8f9fa; /* Bootstrap light gray */
+    cursor: not-allowed;
+    color: #6c757d; /* muted text */
+}

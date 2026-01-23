@@ -179,16 +179,19 @@ function showRSVPForm() {
         name.value = fullName;
         name.readOnly = true;
 
-        // Person 1 toggle
+        // Person 1 toggle for meals
         person1Attending.addEventListener("change", function () {
             if (this.value === "yes") {
                 person1Meals.classList.remove("d-none");
+                person1Meals.querySelectorAll("select").forEach(select => {
+                    select.required = true;
+                });
             } else {
                 person1Meals.classList.add("d-none");
+                person1Meals.querySelectorAll("select").forEach(select => {
+                    select.required = false;
+                });
             }
-        });
-        personOneContainer.querySelectorAll("select").forEach(select => {
-            select.required = true;
         });
 
         console.log(name.value);
@@ -203,28 +206,33 @@ function showRSVPForm() {
         const plusOneContainer = document.getElementById("plus-one-fields");
         if (matchedPerson.plusOne && plusOneContainer) {
             plusOneContainer.classList.remove("d-none");
+            plusOneAttending.required = true;
 
             // Combine plus one's first and last name
             var plusOneFullName = `${matchedPerson.plusOne.first} ${matchedPerson.plusOne.last}`;
             plusOneName.value = plusOneFullName;
             plusOneName.readOnly = true;
 
-            plusOneContainer.querySelectorAll("select").forEach(select => {
-                select.required = true;
-            });
-
-            // Plus 1 toggle
+            // Plus 1 toggle for meals
             plusOneAttending.addEventListener("change", function () {
                 if (this.value === "yes") {
                     plusOneMeals.classList.remove("d-none");
+                    plusOneMeals.querySelectorAll("select").forEach(select => {
+                        select.required = true;
+                    });
                 } else {
                     plusOneMeals.classList.add("d-none");
+                    plusOneMeals.querySelectorAll("select").forEach(select => {
+                        select.required = false;
+                    });
                 }
             });
 
             console.log(plusOneName.value);
 
             // plusOneNameHeading.innerHTML = `${matchedPerson.plusOne.first} ${matchedPerson.plusOne.last}`;
+        } else {
+            plusOneAttending.required = false;
         }
         if (matchedPerson.plusOne) {
             var combinedNames = `${fullName} & \n ${plusOneFullName}`;

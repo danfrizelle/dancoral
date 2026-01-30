@@ -32,7 +32,8 @@
 <body>
     <header>
         <div class="container text-center pt-4">
-            <h1><a href="/" class="text-decoration-none text-dark">CORAL <span class="libre-baskerville-regular">&</span> DAN</a></h1>
+            <h1><a href="/" class="text-decoration-none text-dark">CORAL <span
+                        class="libre-baskerville-regular">&</span> DAN</a></h1>
         </div>
     </header>
     <nav class="navbar navbar-expand text-dark sticky-top">
@@ -47,6 +48,39 @@
             </div>
         </div>
     </nav>
+
+    <!-- Spotify Player -->
+    <iframe id="spotifyPlayer" data-testid="embed-iframe" style="
+    border-radius:12px;
+    position:fixed;
+    bottom:20px;
+    left:20px;
+    width:300px;
+    height:80px;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity 0.6s ease;
+  " src="https://open.spotify.com/embed/track/30pUVEgP0CXceGGTZslhXs?theme=0" frameborder="0"
+        allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+    </iframe>
+
+    <script>
+        let spotifyStarted = false;
+
+        window.addEventListener("scroll", () => {
+            if (spotifyStarted) return;
+
+            const player = document.getElementById("spotifyPlayer");
+
+            // Trigger autoplay after user scrolls
+            player.src += "&autoplay=1";
+            player.style.opacity = "1";
+            player.style.pointerEvents = "auto";
+
+            spotifyStarted = true;
+        }, { once: true });
+    </script>
+
 
     <section id="home" class="pb-5">
         <div class="slider-container mb-5">
@@ -76,26 +110,26 @@
                         <h2 class="schedule-text mb-4">
                             CORAL PARKER <span class="libre-baskerville-regular">&</span> DAN FRIZELLE
                         </h2>
-                        
+
                         <style>
                             .clickable-text {
                                 cursor: pointer;
                                 transition: color 0.3s, transform 0.2s, opacity 0.5s;
                             }
-                            
+
                             .clickable-text:hover {
                                 /* color: #007bff; Change to any highlight color */
                                 /* text-decoration: underline; */
                                 /* transform: scale(1.05); */
                             }
                         </style>
-                        
+
                         <script>
                             function changeNames(element) {
                                 const originalText = "CORAL PARKER & DAN FRIZELLE";
                                 const newText = "CORAL PARELLE & DAN PARELLE";
                                 const currentText = element.textContent.trim().replace(/\s+/g, ' '); // Normalize spaces
-                        
+
                                 element.style.opacity = "0"; // Fade out effect
                                 setTimeout(() => {
                                     element.innerHTML = currentText === originalText ? newText : originalText;
@@ -104,7 +138,7 @@
                             }
                         </script>
                         <!-- End test animation -->
-                        
+
                         <p class="beth-ellen-regular mb-2rem">invite you to join them for their wedding</p>
                         <p class="mb-4">Thursday 15th October 2026</p>
                         <p>at</p>
@@ -116,7 +150,8 @@
                     <div class="d-flex justify-content-center gap-2">
                         <a href="/rsvp.html" class="btn btn-primary montserrat-regular text-uppercase">RSVP here</a>
                         <!-- <a href="https://maps.app.goo.gl/cMMxmsPFYPnJfWVg7" class="btn btn-primary montserrat-regular text-uppercase">Directions to venue</a> -->
-                        <button class="btn btn-primary montserrat-regular text-uppercase" onclick="openMaps()">Directions to venue</button>
+                        <button class="btn btn-primary montserrat-regular text-uppercase"
+                            onclick="openMaps()">Directions to venue</button>
                     </div>
                 </div>
             </div>
@@ -164,7 +199,8 @@
                             data-bs-parent="#accordionFaqs" aria-labelledby="panelsStayOpen-headingOne">
                             <div class="accordion-body">
                                 <p>We’d love for you to get dressed up with us.</p>
-                                <p>As our wedding is in the Autumn, if you feel like it, we'd love you to wear autumnal colours!</p>
+                                <p>As our wedding is in the Autumn, if you feel like it, we'd love you to wear autumnal
+                                    colours!</p>
                                 <div class="colour-pallete-container">
                                     <span class="colour-pallette-item"></span>
                                     <span class="colour-pallette-item"></span>
@@ -185,8 +221,10 @@
                         </h2>
                         <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
                             data-bs-parent="#accordionFaqs" aria-labelledby="panelsStayOpen-headingThree">
-                            <div class="accordion-body"> 
-                                <p>For those staying at the venue, this costs £165 for a double room (£265 for a room that sleeps 4) for the night which is payable the following morning when checking out.</p>
+                            <div class="accordion-body">
+                                <p>For those staying at the venue, this costs £165 for a double room (£265 for a room
+                                    that sleeps 4) for the night which is payable the following morning when checking
+                                    out.</p>
                                 <p>Breakfast is included in this price.</p>
                             </div>
                         </div>
@@ -202,8 +240,12 @@
                         <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse"
                             data-bs-parent="#accordionFaqs" aria-labelledby="panelsStayOpen-headingFour">
                             <div class="accordion-body">
-                                <p>We would love to get some photos of the ceremony without phones in but other that than please do take photos, we have a folder here for everyone to add their photos from the day.</p>
-                                 <a href="https://photos.app.goo.gl/CRHdwfdduBHwb48w8" class="btn btn-primary montserrat-regular text-uppercase" target="_blank">Upload your photos here</a>
+                                <p>We would love to get some photos of the ceremony without phones in but other that
+                                    than please do take photos, we have a folder here for everyone to add their photos
+                                    from the day.</p>
+                                <a href="https://photos.app.goo.gl/CRHdwfdduBHwb48w8"
+                                    class="btn btn-primary montserrat-regular text-uppercase" target="_blank">Upload
+                                    your photos here</a>
                             </div>
                         </div>
                     </div>
@@ -219,7 +261,8 @@
                             data-bs-parent="#accordionFaqs" aria-labelledby="panelsStayOpen-headingFive">
                             <div class="accordion-body">
                                 <p>Please RSVP by 15/04/26.</p>
-                                <a href="/rsvp.html" class="btn btn-primary montserrat-regular text-uppercase">RSVP here</a>
+                                <a href="/rsvp.html" class="btn btn-primary montserrat-regular text-uppercase">RSVP
+                                    here</a>
                             </div>
                         </div>
                     </div>
@@ -265,7 +308,8 @@
                             data-bs-parent="#accordionFaqs" aria-labelledby="panelsStayOpen-headingEight">
                             <div class="accordion-body">
                                 <p>We are getting married at Coltsfoot Country Retreat.</p>
-                                    <button class="btn btn-primary montserrat-regular text-uppercase" onclick="openMaps()">Directions to venue</button>
+                                <button class="btn btn-primary montserrat-regular text-uppercase"
+                                    onclick="openMaps()">Directions to venue</button>
                             </div>
                         </div>
                     </div>
@@ -280,8 +324,11 @@
                         <div id="panelsStayOpen-collapseNine" class="accordion-collapse collapse"
                             data-bs-parent="#accordionFaqs" aria-labelledby="panelsStayOpen-headingNine">
                             <div class="accordion-body">
-                                <p>If you have any songs you want to hear, please add them to the spotify playlist below.</p>
-                                <a href="https://open.spotify.com/playlist/6Ab8VMDHim1pOBbfpIIhgY?si=PYqxblZrR-OXbcUhcy2N6w&pi=RolP30T_S9i6a&pt=749d24f6bfd69e492e881586c6c07d30" class="btn btn-primary montserrat-regular text-uppercase" target="_blank">Add to the playlist</a>
+                                <p>If you have any songs you want to hear, please add them to the spotify playlist
+                                    below.</p>
+                                <a href="https://open.spotify.com/playlist/6Ab8VMDHim1pOBbfpIIhgY?si=PYqxblZrR-OXbcUhcy2N6w&pi=RolP30T_S9i6a&pt=749d24f6bfd69e492e881586c6c07d30"
+                                    class="btn btn-primary montserrat-regular text-uppercase" target="_blank">Add to the
+                                    playlist</a>
                             </div>
                         </div>
                     </div>
@@ -296,7 +343,8 @@
                         <div id="panelsStayOpen-collapseTen" class="accordion-collapse collapse"
                             data-bs-parent="#accordionFaqs" aria-labelledby="panelsStayOpen-headingTen">
                             <div class="accordion-body">
-                                <p>You will get 5 drinks throughout the day on us and the bar will be open all day for you to purchase drinks.</p>
+                                <p>You will get 5 drinks throughout the day on us and the bar will be open all day for
+                                    you to purchase drinks.</p>
                             </div>
                         </div>
                     </div>
@@ -314,7 +362,9 @@
                                 <p>Please spend your money on drinks on the day as we want to celebrate with you!</p>
                                 <p>However if you are feeling extra generous we are going to Mexico for our
                                     honeymoon and anything towards this would be very much appreciated!</p>
-                                <a href="https://www.paypal.com/pool/9m0q5d2vnV?sr=ancr" class="btn btn-primary montserrat-regular text-uppercase disabled" target="_blank">Link coming soon</a>
+                                <a href="https://www.paypal.com/pool/9m0q5d2vnV?sr=ancr"
+                                    class="btn btn-primary montserrat-regular text-uppercase disabled"
+                                    target="_blank">Link coming soon</a>
                             </div>
                         </div>
                     </div>

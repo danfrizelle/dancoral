@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//dancoral.co.uk//Wedding//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:20261015T123000-coral-dan@dancoral.co.uk
+DTSTAMP:20260130T000000Z
+SUMMARY:Coral & Dan's Wedding
+DTSTART;TZID=Europe/London:20261015T123000
+DTEND;TZID=Europe/London:20261016T000000
+LOCATION:Coltsfoot Country Retreat\, Knebworth\, SG3 6SB
+DESCRIPTION:We can't wait to celebrate with you!\n\nRSVP: https://www.dancoral.co.uk/rsvp.html
+URL:https://www.dancoral.co.uk
+END:VEVENT
+END:VCALENDAR

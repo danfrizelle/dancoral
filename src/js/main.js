@@ -123,7 +123,7 @@ const allowedNames = [
     {
         first: "Essel",
         last: "Uysal",
-        plusOne: { first: "Hez", last: "" } //confirm name
+        plusOne: { first: "Hezal", last: "Yasar" }
     },
     {
         first: "Tom",

@@ -453,3 +453,8 @@ label[for][for]:has(+ select[required])::after {
     cursor: not-allowed;
     color: #6c757d; /* muted text */
 }
+
+.calendar-dropdown-menu {
+    width: 100%;
+    text-align: center;
+}

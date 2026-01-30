@@ -18,8 +18,7 @@ function getCookie(name) {
 const allowedNames = [
     {
         first: "Dan",
-        last: "Frizelle",
-        plusOne: { first: "Test", last: "Surname" }
+        last: "Frizelle"
     },
     {
         first: "Coral",
@@ -27,8 +26,7 @@ const allowedNames = [
     },
     {
         first: "Melanie",
-        last: "Parker",
-        // plusOne: { first: "Travis", last: "Kelce" }
+        last: "Parker"
     },
     {
         first: "Indie",
@@ -82,8 +80,7 @@ const allowedNames = [
     },
     {
         first: "Emma",
-        last: "Riordan",
-        // plusOne: { first: "TBC", last: "TBC" }
+        last: "Riordan"
     },
     {
         first: "Janvee",
@@ -126,14 +123,13 @@ const allowedNames = [
         plusOne: { first: "Hezal", last: "Yasar" }
     },
     {
-        first: "Tom",
+        first: "Thomas",
         last: "Gregory",
-        // plusOne: { first: "TBC", last: "TBC" }
+        plusOne: { first: "Naomi", last: "Turner" }
     },
     {
         first: "Viv",
-        last: "Bryans",
-        // plusOne: { first: "TBC", last: "TBC" }
+        last: "Bryans"
     }
 ];
 

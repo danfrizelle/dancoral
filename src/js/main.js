@@ -128,7 +128,7 @@ const allowedNames = [
         plusOne: { first: "Naomi", last: "Turner" }
     },
     {
-        first: "Viv",
+        first: "Vivienne",
         last: "Bryans"
     }
 ];

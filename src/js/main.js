@@ -131,7 +131,7 @@ const allowedNames = [
     },
     {
         first: "David",
-        last: "Axworthy",
+        last: "AxwYorthy",
     }
 ];
 
@@ -324,7 +324,7 @@ function login() {
 
 
 function countdown() {
-    const weddingDate = new Date("2026-10-05T00:00:00").getTime();
+    const weddingDate = new Date("2026-10-15T00:00:00").getTime();
     const x = setInterval(function () {
         const now = new Date().getTime();
         const distance = weddingDate - now;

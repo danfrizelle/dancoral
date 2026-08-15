@@ -131,7 +131,7 @@ const allowedNames = [
     },
     {
         first: "David",
-        last: "AxwYorthy",
+        last: "Axworthy",
     }
 ];
 

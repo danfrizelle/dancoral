@@ -60,8 +60,7 @@ const allowedNames = [
     },
     {
         first: "Perri",
-        last: "Driscoll",
-        plusOne: { first: "Holly", last: "Prosser" }
+        last: "Driscoll"
     },
     {
         first: "Terri",
@@ -99,8 +98,7 @@ const allowedNames = [
     },
     {
         first: "Ben",
-        last: "Williams",
-        plusOne: { first: "Kate", last: "Goldrich" }
+        last: "Williams"
     },
     {
         first: "Sean",
@@ -130,6 +128,10 @@ const allowedNames = [
     {
         first: "Vivienne",
         last: "Bryans"
+    },
+    {
+        first: "David",
+        last: "Axworthy",
     }
 ];
 
